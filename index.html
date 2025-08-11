@@ -1,188 +1,305 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATTENTIA Studio — Atrae más clientes: SEO + AEO (ChatGPT, Gemini, Perplexity)</title>
-    <meta name="description" content="Diagnóstico y optimización web sin vueltas: SEO + AEO para que te encuentren en Google y en respuestas de IA (ChatGPT, Gemini, Perplexity y más). Tu sitio carga rápido y convierte más. Pedí tu diagnóstico por WhatsApp.">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #fff;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-        }
-        /* Logo 4x más grande (PC y móvil) */
-        .logo {
-            max-width: 300px; /* 4x tamaño en PC */
-            width: 100%;
-            height: auto;
-        }
-        @media (max-width: 768px) {
-            .logo {
-                max-width: 360px; /* 4x tamaño en móvil */
-            }
-        }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        .lead {
-            font-size: 1.2rem;
-            max-width: 900px;
-            margin: auto;
-            color: #555;
-        }
-        section {
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background: #f8f8f8;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .eyebrow {
-            color: #6c63ff;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .cta {
-            text-align: center;
-            margin: 40px 0;
-        }
-        .cta a {
-            background: #6c63ff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-        .cta a:hover {
-            background: #5a52d6;
-        }
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 0.9rem;
-        }
-        .note {
-            font-size: 1.5rem;
-            background: #eaf5ea;
-            color: #2f6f2f;
-            padding: 5px 10px;
-            display: inline-block;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>ATTENTIA Studio — Atrae más clientes: SEO + AEO (ChatGPT, Gemini, Perplexity)</title>
+  <meta name="description" content="Diagnóstico y optimización web sin vueltas. SEO + AEO para que te encuentren en Google y en respuestas de IA (ChatGPT, Gemini, Perplexity y más). Tu sitio carga rápido y convierte más. Pedí tu diagnóstico por WhatsApp." />
+  <link rel="canonical" href="https://attentiastudio.com.ar/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ATTENTIA Studio" />
+  <meta property="og:title" content="Atraé más clientes: SEO + AEO (ChatGPT, Gemini, Perplexity)" />
+  <meta property="og:description" content="Te encuentran en Google y en respuestas de IA. Sitios rápidos que convierten. Plan simple, implementación y resultados medibles." />
+  <meta property="og:url" content="https://attentiastudio.com.ar/" />
+  <meta property="og:image" content="https://attentiastudio.com.ar/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#6c63ff" />
+
+  <!-- (Opcional) hoja externa si la usás -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    :root{
+      --brand:#6c63ff;
+      --brand-600:#5a52d6;
+      --text:#333;
+      --muted:#555;
+      --bg:#fff;
+      --card:#f7f7f8;
+      --note-bg:#eaf5ea;
+      --note-text:#2f6f2f;
+      --maxw:1000px;
+      --radius:10px;
+      --shadow:0 2px 10px rgba(0,0,0,.06);
+    }
+    /* Reset fino */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    header{
+      text-align:center;
+      padding:28px 16px 8px;
+    }
+    /* Logo grande en desktop, un poco menor en móvil */
+    .logo{
+      width:100%;
+      max-width:560px;      /* desktop */
+      height:auto;
+    }
+    @media (max-width:768px){
+      .logo{max-width:360px;} /* móvil */
+    }
+
+    main{display:block}
+    section{
+      padding:20px;
+      max-width:var(--maxw);
+      margin:auto;
+    }
+
+    h1{
+      font-size:clamp(1.6rem,2.5vw,2.2rem);
+      line-height:1.25;
+      margin:0 0 10px 0;
+      text-align:center;
+      text-wrap:balance;
+    }
+    .lead{
+      font-size:1.1rem;
+      max-width:900px;
+      margin:0 auto;
+      color:var(--muted);
+      text-align:center;
+    }
+    .note{
+      font-size:1rem;
+      background:var(--note-bg);
+      color:var(--note-text);
+      padding:10px 14px;
+      display:inline-block;
+      border-radius:8px;
+      margin:14px auto 0;
+      box-shadow:var(--shadow);
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+      margin-top:10px;
+    }
+    .card{
+      background:var(--card);
+      padding:18px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .eyebrow{
+      color:var(--brand);
+      font-size:.9rem;
+      margin-bottom:6px;
+      font-weight:700;
+      letter-spacing:.2px;
+      text-transform:none;
+    }
+
+    ul{padding-left:18px}
+    li+li{margin-top:6px}
+
+    .cta{
+      text-align:center;
+      margin:32px 0 48px;
+    }
+    .btn{
+      background:var(--brand);
+      color:#fff;
+      padding:12px 22px;
+      border-radius:8px;
+      text-decoration:none;
+      font-size:1.05rem;
+      display:inline-block;
+      box-shadow:var(--shadow);
+      transition:transform .06s ease, background .15s ease;
+    }
+    .btn:hover{background:var(--brand-600);transform:translateY(-1px)}
+    .btn:active{transform:translateY(0)}
+
+    footer{
+      background:#1f1f1f;
+      color:#eee;
+      text-align:center;
+      padding:18px 12px;
+      font-size:.92rem;
+    }
+    footer a{color:#cfd9ff;text-decoration:none}
+    footer a:hover{text-decoration:underline}
+
+    /* Accesibilidad: foco visible */
+    a:focus-visible, summary:focus-visible, button:focus-visible{
+      outline:3px solid var(--brand);
+      outline-offset:2px;
+      border-radius:6px;
+    }
+
+    details{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:10px 14px;
+      box-shadow:var(--shadow);
+    }
+    summary{cursor:pointer;font-weight:600}
+  </style>
 </head>
 <body>
 
-<header>
-    <!-- Carga primero assets/logo.png y, si no existe, usa ATTENTIA.png en la raíz -->
+  <header>
+    <!-- Intenta cargar primero assets/logo.png; si no existe, usa ATTENTIA.png -->
     <picture>
-        <source srcset="assets/logo.png">
-        <img src="ATTENTIA.png" alt="Attentia Studio" class="logo">
+      <source srcset="assets/logo.png" />
+      <img src="ATTENTIA.png" alt="ATTENTIA Studio — Auditoría y Optimización Web" class="logo" />
     </picture>
-</header>
+  </header>
 
-<section style="text-align:center;">
-    <h1 id="hero-title">ATRAE MÁS CLIENTES DESDE TU WEB: SEO + AEO</h1>
-    <p class="lead">Te encuentran en Google y en respuestas de IA (ChatGPT, Gemini, Perplexity y más). Tu sitio carga rápido en celular y la gente entiende cómo comprar. Plan simple, implementación y resultados medibles.</p>
-    <p class="note">Incluye AEO: optimización para aparecer en respuestas de ChatGPT, Gemini, Perplexity y más.</p>
-</section>
+  <main>
+    <section aria-labelledby="hero-title" style="text-align:center;">
+      <h1 id="hero-title">ATRAE MÁS CLIENTES DESDE TU WEB: SEO + AEO</h1>
+      <p class="lead">
+        Te encuentran en Google <strong>y</strong> en respuestas de IA (ChatGPT, Gemini, Perplexity y más).
+        Tu sitio carga rápido en celular y la gente entiende cómo comprar. Plan simple, implementación y resultados medibles.
+      </p>
+      <p class="note" role="note">Incluye AEO: optimización para aparecer en respuestas de ChatGPT, Gemini, Perplexity y más.</p>
+    </section>
 
-<section>
-    <h2>¿Qué puede estar pasando?</h2>
-    <ul>
-        <li>Muchos llegan a tu web... pero se van sin comprar.</li>
+    <section aria-labelledby="sec-problemas">
+      <h2 id="sec-problemas">¿Qué puede estar pasando?</h2>
+      <ul>
+        <li>Muchos llegan a tu web… pero se van sin comprar.</li>
         <li>No aparecés arriba en Google.</li>
         <li>No aparecés cuando la gente le pregunta a ChatGPT o Gemini.</li>
         <li>Es lenta o confusa en celular.</li>
         <li>Falta información clave (envíos, talles, garantías).</li>
-    </ul>
-</section>
+      </ul>
+    </section>
 
-<section>
-    <h2>Beneficios claros para tu negocio</h2>
-    <div class="cards">
+    <section aria-labelledby="sec-beneficios">
+      <h2 id="sec-beneficios">Beneficios claros para tu negocio</h2>
+      <div class="cards">
         <div class="card">
-            <div class="eyebrow">Te encuentran primero</div>
-            Mejor posición en Google <strong>y en asistentes de IA</strong> (ChatGPT, Gemini, Perplexity) cuando tus clientes preguntan.
+          <div class="eyebrow">Te encuentran primero</div>
+          Mejor posición en Google <strong>y en asistentes de IA</strong> (ChatGPT, Gemini, Perplexity) cuando tus clientes preguntan.
         </div>
         <div class="card">
-            <div class="eyebrow">Velocidad y rendimiento</div>
-            Tu web vuela en celular y carga rapidísimo.
+          <div class="eyebrow">Velocidad y rendimiento</div>
+          Tu web vuela en celular y carga rapidísimo.
         </div>
         <div class="card">
-            <div class="eyebrow">Más ventas</div>
-            Los visitantes compran más seguido porque está todo claro y fácil.
+          <div class="eyebrow">Más ventas</div>
+          Los visitantes compran más seguido porque está todo claro y fácil.
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section>
-    <h2>Qué hacemos (sin vueltas)</h2>
-    <div class="cards">
+    <section aria-labelledby="sec-servicios">
+      <h2 id="sec-servicios">Qué hacemos (sin vueltas)</h2>
+      <div class="cards">
         <div class="card"><strong>Diagnóstico global</strong><br>Qué falla y cómo mejorarlo.</div>
         <div class="card"><strong>SEO + AEO</strong><br>Aparecer más seguido en Google y asistentes digitales.</div>
         <div class="card"><strong>Velocidad y estabilidad</strong><br>Web rápida y firme, especialmente en celulares.</div>
         <div class="card"><strong>Contenido que vende</strong><br>Textos claros, FAQs, productos bien presentados.</div>
         <div class="card"><strong>Presencia en respuestas de IA (AEO)</strong><br>Preparamos contenido y datos para que los asistentes puedan citar y recomendar tu negocio.</div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section>
-    <h2>Cómo trabajamos</h2>
-    <ol>
+    <section aria-labelledby="sec-proceso">
+      <h2 id="sec-proceso">Cómo trabajamos</h2>
+      <ol>
         <li><strong>Diagnóstico completo:</strong> vemos qué frena las ventas.</li>
         <li><strong>Plan simple:</strong> qué hacer, cuándo y quién lo hace.</li>
         <li><strong>Ejecutamos las mejoras</strong> (nosotros o tu desarrollador).</li>
         <li><strong>Medimos resultados</strong> y mejoramos mes a mes.</li>
-    </ol>
-</section>
+      </ol>
+    </section>
 
-<section>
-    <h2>Preguntas frecuentes</h2>
-    <details>
+    <section aria-labelledby="sec-faq">
+      <h2 id="sec-faq">Preguntas frecuentes</h2>
+      <details>
         <summary>¿Me van a recomendar ChatGPT o Gemini?</summary>
-        Trabajamos AEO: contenido original y verificable, FAQs claras, datos estructurados y autoridad de marca. Esto facilita que asistentes como ChatGPT, Gemini o Perplexity te citen en sus respuestas.
-    </details>
-</section>
+        <p>Trabajamos AEO: contenido original y verificable, FAQs claras, datos estructurados y autoridad de marca. Esto facilita que asistentes como ChatGPT, Gemini o Perplexity te citen en sus respuestas.</p>
+      </details>
+    </section>
 
-<div class="cta">
-    <a href="https://wa.me/5492612633494" target="_blank" rel="noopener">Pedí tu diagnóstico gratis por WhatsApp</a>
-</div>
+    <div class="cta">
+      <a class="btn" href="https://wa.me/5492612633494" target="_blank" rel="noopener noreferrer"
+         aria-label="Pedí tu diagnóstico gratis por WhatsApp">
+        Pedí tu diagnóstico gratis por WhatsApp
+      </a>
+    </div>
+  </main>
 
-<footer>
-    <p>© 2025 ATTENTIA Studio — info@attentiastudio.com.ar — www.attentiastudio.com.ar</p>
-</footer>
+  <footer>
+    <p>
+      © 2025 ATTENTIA Studio — <a href="mailto:info@attentiastudio.com.ar">info@attentiastudio.com.ar</a> —
+      <a href="https://attentiastudio.com.ar/">www.attentiastudio.com.ar</a>
+    </p>
+  </footer>
 
-<!-- robots.txt y sitemap.xml -->
-<link rel="robots" href="robots.txt">
-<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+  <!-- (Opcional) referencias: algunos navegadores ignoran estos rel; mantener no daña -->
+  <link rel="robots" href="robots.txt" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
 
-<!-- Datos estructurados -->
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"Auditoría y Optimización Web","provider":{"@type":"Organization","name":"ATTENTIA Studio"},"areaServed":"AR","description":"Diagnóstico y optimización: SEO + AEO (Answer Engine Optimization) para aparecer en Google y en respuestas de IA (ChatGPT, Gemini, Perplexity). Velocidad móvil, UX y conversión."}
-</script>
+  <!-- Datos estructurados: Service (AEO/SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Auditoría y Optimización Web (SEO + AEO)",
+    "serviceType":"SEO y Answer Engine Optimization",
+    "provider":{
+      "@type":"Organization",
+      "name":"ATTENTIA Studio",
+      "url":"https://attentiastudio.com.ar",
+      "logo":"https://attentiastudio.com.ar/assets/logo.png"
+    },
+    "areaServed":"AR",
+    "description":"Diagnóstico y optimización: SEO + AEO para aparecer en Google y en respuestas de IA (ChatGPT, Gemini, Perplexity). Velocidad móvil, UX y conversión.",
+    "offers":{
+      "@type":"Offer",
+      "availability":"https://schema.org/InStock",
+      "priceCurrency":"ARS",
+      "price":"0",
+      "description":"Diagnóstico inicial sin costo y plan de acción."
+    }
+  }
+  </script>
 
+  <!-- Datos estructurados: FAQ para AEO/SEO -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"¿Me van a recomendar ChatGPT o Gemini?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Sí. Trabajamos AEO con contenido original, FAQs claras, datos estructurados (schema) y señal de autoridad. Eso facilita que ChatGPT, Gemini y Perplexity citen el sitio en sus respuestas."
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
