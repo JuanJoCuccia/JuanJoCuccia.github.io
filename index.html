@@ -1,147 +1,236 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es-AR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ATTENTIA Studio - Auditoría y Optimización Web</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATTENTIA Studio — Auditoría y Optimización Web (SEO + AEO)</title>
+  <meta name="description" content="Auditorías y optimización web que convierten: velocidad, UX, SEO y AEO para aparecer en Google y asistentes de IA. Pedí tu diagnóstico sin cargo." />
+
+  <!-- Favicon minimal -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23111111'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%237E5CE6'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%234CBF88'/%3E%3C/svg%3E">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      color: #111;
-      line-height: 1.6;
-      background: #fff;
+    :root{
+      --bg:#ffffff; --muted:#6b7280; --ink:#111111; --ink-2:#1f2937;
+      --brand:#7E5CE6; --brand2:#4CBF88; --surface:#f6f7fb; --border:#e5e7eb;
+      --radius:16px; --shadow:0 8px 30px rgba(0,0,0,.06);
+      --maxw:1080px;
     }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-      border-bottom: 1px solid #eee;
+    /* Reset básico */
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);}
+
+    /* Accesibilidad */
+    a:focus, button:focus { outline: 3px solid rgba(126,92,230,.4); outline-offset: 2px; }
+    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+    .skip:focus{position:static;width:auto;height:auto;background:#fff;border:2px solid var(--brand);padding:.5rem 1rem;border-radius:10px;margin:10px;}
+
+    /* Layout */
+    .container{max-width:var(--maxw);margin:auto;padding:20px}
+    header{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border);z-index:10}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:52px;width:auto;display:block}
+    nav a{color:var(--ink-2);text-decoration:none;margin-left:18px;font-size:14px}
+    nav a:hover{text-decoration:underline}
+
+    /* Botones */
+    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;border:1px solid var(--border);padding:12px 18px;background:#fff;color:var(--ink-2);text-decoration:none;font-weight:600;box-shadow:0 0 0 0 rgba(126,92,230,.22);transition:box-shadow .2s, transform .04s}
+    .btn:hover{box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .btn:active{transform:translateY(1px)}
+    .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff;border:none}
+    .btn-ghost{background:#fff}
+
+    /* Hero */
+    .hero{padding:38px 20px}
+    .hero-inner{display:grid;grid-template-columns:1fr;gap:22px}
+    .kicker{color:var(--brand);font-weight:700;letter-spacing:.4px;text-transform:uppercase;font-size:.85rem}
+    h1{font-size:clamp(28px,4.2vw,44px);line-height:1.1;margin:.2rem 0 0.6rem}
+    .lead{font-size:clamp(16px,2.4vw,18px);color:#374151;margin:0 0 14px}
+    .hero-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+
+    /* Secciones */
+    section{padding:28px 0;border-top:1px solid var(--border)}
+    h2{font-size:clamp(20px,3vw,26px);margin:0 0 12px}
+    .grid-3{display:grid;grid-template-columns:1fr;gap:14px}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:14px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+    .eyebrow{color:var(--brand2);font-weight:700;font-size:.9rem;margin-bottom:6px}
+
+    /* Timeline */
+    .step{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px}
+    .step strong{color:var(--ink)}
+
+    /* Testimonios */
+    blockquote{margin:0;padding:16px;border-left:4px solid var(--brand2);background:#fff;border:1px solid var(--border);border-radius:12px}
+
+    /* FAQ */
+    details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:600}
+
+    /* Footer */
+    footer{padding:40px 0 60px;border-top:1px solid var(--border);background:#fafafa}
+    .footer-wrap{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+    .contact{color:var(--muted);font-size:.95rem}
+
+    /* Responsive */
+    @media (min-width:780px){
+      .logo img{height:64px}
+      .hero-inner{grid-template-columns:1.2fr .8fr;align-items:center}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      .grid-2{grid-template-columns:repeat(2,1fr)}
+      .footer-wrap{flex-direction:row;justify-content:space-between;align-items:center}
     }
-    .logo img {
-      height: 48px;
-      width: auto;
-      display: block;
+
+    /* Botón flotante WhatsApp (mobile first) */
+    .fab{
+      position:fixed;right:18px;bottom:18px;z-index:20;
+      background:#25D366;color:#fff;border-radius:999px;
+      padding:12px 16px;font-weight:700;text-decoration:none;
+      box-shadow:0 10px 24px rgba(37,211,102,.35);
     }
-    @media (min-width: 780px) {
-      .logo img {
-        height: 64px;
-      }
-    }
-    .cta-top a {
-      background: #25D366;
-      color: white;
-      padding: 10px 16px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 24px;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-top: 0;
-    }
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 2rem;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 4px;
-    }
-    .btn-primary {
-      background: #6C63FF;
-      color: white;
-    }
-    .btn-secondary {
-      background: #f0f0f0;
-      color: #111;
-    }
-    .grid {
-      display: grid;
-      gap: 16px;
-    }
-    @media (min-width: 600px) {
-      .grid-cols-3 {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      .grid-cols-2 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    .card {
-      border: 1px solid #eee;
-      border-radius: 8px;
-      padding: 16px;
-      background: #fff;
-    }
-    footer {
-      text-align: center;
-      font-size: 14px;
-      padding: 16px;
-      border-top: 1px solid #eee;
-      background: #fafafa;
-    }
+    @media (min-width:780px){ .fab{display:none} }
   </style>
+
+  <!-- Schema.org (Organization + Service + FAQ) -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"ATTENTIA Studio","url":"https://attentiastudio.com.ar","logo":"https://attentiastudio.com.ar/assets/logo.png","contactPoint":[{"@type":"ContactPoint","telephone":"+54 9 2612633494","contactType":"customer service","areaServed":"AR"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"Auditoría y Optimización Web (SEO + AEO)","provider":{"@type":"Organization","name":"ATTENTIA Studio"},"areaServed":"AR","description":"Auditoría técnica, SEO, AEO, optimización de UX y Core Web Vitals para aumentar visibilidad y conversiones."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"¿Qué incluye la auditoría?","acceptedAnswer":{"@type":"Answer","text":"Rastreo técnico, velocidad y Core Web Vitals; SEO on-page; datos estructurados; UX y AEO (contenido y FAQs listos para asistentes de IA)."}},
+    {"@type":"Question","name":"¿Cuándo veo resultados?","acceptedAnswer":{"@type":"Answer","text":"Mejoras de performance y conversión en semanas; crecimiento orgánico en 60–90 días, según competencia y volumen actual."}}
+  ]}
+  </script>
 </head>
 <body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
   <header>
-    <div class="logo">
-      <img src="assets/logo.png" alt="ATTENTIA Studio" />
-    </div>
-    <div class="cta-top">
-      <a href="https://wa.me/5492612633494?text=Hola%20ATTENTIA%2C%20quiero%20un%20diagn%C3%B3stico%20de%20mi%20sitio" target="_blank" rel="noopener">
-        Hablá por WhatsApp
-      </a>
+    <div class="bar container">
+      <div class="logo">
+        <img src="assets/logo.png" alt="ATTENTIA Studio">
+      </div>
+      <nav aria-label="principal">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn btn-primary" href="https://wa.me/5492612633494?text=Hola%20ATTENTIA%2C%20quiero%20un%20diagn%C3%B3stico%20de%20mi%20sitio" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">Hablá por WhatsApp</a>
+      </nav>
     </div>
   </header>
 
-  <div class="container">
-    <h1>Auditoría y Optimización Web inteligente</h1>
-    <p>Hacemos que tu sitio sea rápido, visible y persuasivo — para personas y para asistentes de IA (SEO + AEO).</p>
-    <a href="#" class="btn btn-primary">Solicitar diagnóstico</a>
-    <a href="mailto:info@attentiastudio.com.ar" class="btn btn-secondary">Escribir por email</a>
+  <main id="contenido" class="container">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">Auditoría & Optimización Web</div>
+          <h1 id="hero-title">Transformamos tu sitio en una máquina de ventas</h1>
+          <p class="lead">Sitios <strong>rápidos, visibles y persuasivos</strong> — para personas y para asistentes de IA (SEO + AEO). Diagnóstico claro, plan accionable y mejoras medibles.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:10px">
+            <a class="btn btn-primary" href="https://wa.me/5492612633494?text=Hola%20ATTENTIA%2C%20quiero%20un%20diagn%C3%B3stico%20de%20mi%20sitio" target="_blank" rel="noopener">Solicitar diagnóstico</a>
+            <a class="btn btn-ghost" href="mailto:info@attentiastudio.com.ar">Escribir por email</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Por qué no vende tu sitio">
+          <strong>¿Por qué tu sitio recibe visitas pero no vende?</strong>
+          <ul>
+            <li>No aparecés arriba en Google.</li>
+            <li>Las IA (ChatGPT, Gemini, Perplexity) no recomiendan tu negocio.</li>
+            <li>Es lenta o confusa en celular.</li>
+            <li>Falta info clave: envíos, garantías, talles, FAQs.</li>
+          </ul>
+          <span class="muted">Lo arreglamos con una auditoría 360° y un plan accionable.</span>
+        </aside>
+      </div>
+    </section>
 
-    <h2>Beneficios concretos</h2>
-    <div class="grid grid-cols-3">
-      <div class="card"><strong>Más visibilidad</strong><br>SEO + AEO: Google y asistentes de IA.</div>
-      <div class="card"><strong>Más velocidad</strong><br>Core Web Vitals y performance móvil.</div>
-      <div class="card"><strong>Más conversiones</strong><br>UX clara, CTAs y contenido persuasivo.</div>
+    <!-- BENEFICIOS -->
+    <section id="beneficios" aria-labelledby="beneficios-title">
+      <h2 id="beneficios-title">Beneficios concretos</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="eyebrow">Más visibilidad</div>
+          SEO + AEO: Google y asistentes de IA.
+        </div>
+        <div class="card">
+          <div class="eyebrow">Más velocidad</div>
+          Core Web Vitals y performance móvil.
+        </div>
+        <div class="card">
+          <div class="eyebrow">Más conversiones</div>
+          UX clara, CTAs y contenido persuasivo.
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" aria-labelledby="servicios-title">
+      <h2 id="servicios-title">Servicios</h2>
+      <div class="grid-2">
+        <div class="card"><strong>Auditoría técnica y de contenido</strong><br>Rastreo, indexación, metadatos, interlinking y contenido.</div>
+        <div class="card"><strong>Optimización SEO + AEO</strong><br>Datos estructurados, FAQs y contenido que las IA pueden citar.</div>
+        <div class="card"><strong>Velocidad y Core Web Vitals</strong><br>Imágenes, scripts, caché, CDN: sitio rápido y estable.</div>
+        <div class="card"><strong>Estrategia de contenidos</strong><br>Categorías, fichas y blogs que responden dudas reales.</div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" aria-labelledby="proceso-title">
+      <h2 id="proceso-title">Proceso de trabajo</h2>
+      <div class="grid-2">
+        <div class="step"><strong>1) Diagnóstico inicial.</strong> Relevamos tu web y detectamos oportunidades.</div>
+        <div class="step"><strong>2) Informe y plan.</strong> Roadmap P1/P2/P3 con tareas y responsables.</div>
+        <div class="step"><strong>3) Implementación.</strong> Aplicamos mejoras técnicas y de contenido.</div>
+        <div class="step"><strong>4) Seguimiento.</strong> Medimos en GA4/GSC y ajustamos mensualmente.</div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section aria-labelledby="resultados-title">
+      <h2 id="resultados-title">Resultados</h2>
+      <div class="grid-2">
+        <blockquote>“En 60 días subimos el tráfico orgánico y empezamos a aparecer en respuestas de IA para términos clave.”<br><span class="muted">— Comercio retail (caso de estudio disponible)</span></blockquote>
+        <blockquote>“La velocidad móvil mejoró de 38 a 88 y la tasa de conversión subió un 23%.”<br><span class="muted">— Tienda online (migración y optimización)</span></blockquote>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <details>
+        <summary>¿Cómo medimos el impacto?</summary>
+        Usamos GA4, GSC y reportes de ventas/conversión. Te damos tablero y seguimiento.
+      </details>
+      <details>
+        <summary>¿Pueden implementar los cambios?</summary>
+        Sí. Podemos trabajar con tu proveedor o implementarlos nosotros por fases.
+      </details>
+    </section>
+  </main>
+
+  <!-- CTA final + contacto -->
+  <footer id="contacto">
+    <div class="container footer-wrap">
+      <div>
+        <h2 style="margin:0">El momento de optimizar es ahora</h2>
+        <p class="contact">WhatsApp: +54 9 261 263 3494 · Email: info@attentiastudio.com.ar</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="https://wa.me/5492612633494?text=Hola%20ATTENTIA%2C%20quiero%20un%20diagn%C3%B3stico%20de%20mi%20sitio" target="_blank" rel="noopener">Solicitar diagnóstico</a>
+        <a class="btn btn-ghost" href="mailto:info@attentiastudio.com.ar">Escribir por email</a>
+      </div>
     </div>
-
-    <h2>Servicios</h2>
-    <div class="grid grid-cols-2">
-      <div class="card">Auditoría técnica y de contenido</div>
-      <div class="card">Optimización SEO + AEO</div>
-      <div class="card">Velocidad y Core Web Vitals</div>
-      <div class="card">Estrategia de contenidos</div>
-    </div>
-
-    <h2>Proceso de trabajo</h2>
-    <ol>
-      <li>Diagnóstico inicial</li>
-      <li>Informe y plan</li>
-      <li>Implementación</li>
-      <li>Seguimiento</li>
-    </ol>
-
-    <h2>Resultados</h2>
-    <p><em>“En 60 días subimos el tráfico orgánico y empezamos a aparecer en respuestas de IA para términos clave.”</em></p>
-    <p><em>“La velocidad móvil mejoró de 38 a 89 y la tasa de conversión subió un 23%.”</em></p>
-  </div>
-
-  <footer>
-    WhatsApp: +54 9 261 263 3494 — Email: info@attentiastudio.com.ar
   </footer>
+
+  <!-- Botón flotante (solo mobile) -->
+  <a class="fab" href="https://wa.me/5492612633494?text=Hola%20ATTENTIA%2C%20quiero%20un%20diagn%C3%B3stico%20de%20mi%20sitio" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
 </body>
 </html>
