@@ -1,211 +1,183 @@
-<!doctype html>
-<html lang="es-AR">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ATTENTIA Studio — Atraé más clientes desde tu web, sin complicarte</title>
-  <meta name="description" content="Diagnóstico y optimización web sin vueltas: te encuentran primero, tu sitio carga rápido y convierte más. SEO + AEO + UX. Pedí tu diagnóstico gratis por WhatsApp." />
-
-  <!-- OG básico -->
-  <meta property="og:title" content="ATTENTIA Studio — Auditoría y Optimización Web" />
-  <meta property="og:description" content="Atraé más clientes desde tu web: te encuentran, carga rápido y convence. Diagnóstico gratis por WhatsApp." />
-  <meta property="og:type" content="website" />
-
-  <!-- Favicon minimal -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23111111'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%237E5CE6'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%234CBF88'/%3E%3C/svg%3E">
-
-  <style>
-    :root{
-      --ink:#0f0f10; --ink2:#1f2937; --muted:#6b7280; --bg:#ffffff; --surface:#f6f7fb; --border:#e5e7eb;
-      --brand:#7E5CE6; --brand2:#4CBF88; --ring:rgba(126,92,230,.25);
-      --radius:16px; --shadow:0 8px 28px rgba(0,0,0,.06); --maxw:1080px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-    a{color:var(--brand);text-decoration:none}
-    a:focus-visible,button:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
-    .container{max-width:var(--maxw);margin:auto;padding:20px}
-    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border)}
-    .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo img{height:56px;width:auto;display:block}
-    @media (min-width:780px){ .logo img{height:68px} }
-    nav a{color:var(--ink2);margin-left:18px;font-size:14px}
-    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;border:1px solid var(--border);padding:12px 18px;background:#fff;color:var(--ink2);font-weight:600;box-shadow:0 0 0 0 var(--ring);transition:box-shadow .2s,transform .04s}
-    .btn:hover{box-shadow:0 6px 18px rgba(0,0,0,.06)}
-    .btn:active{transform:translateY(1px)}
-    .btn-primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#fff;border:none}
-    .btn-ghost{background:#fff}
-    .hero{padding:36px 20px}
-    .hero-grid{display:grid;grid-template-columns:1fr;gap:22px}
-    .kicker{color:var(--brand);font-weight:700;letter-spacing:.4px;text-transform:uppercase;font-size:.85rem}
-    h1{font-size:clamp(28px,4.4vw,44px);line-height:1.1;margin:.3rem 0 .6rem}
-    .lead{font-size:clamp(16px,2.4vw,18px);color:#374151;margin:0 0 14px}
-    .note{color:var(--muted);font-size:.95rem}
-    .hero-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
-    section{padding:28px 0;border-top:1px solid var(--border)}
-    h2{font-size:clamp(20px,3vw,26px);margin:0 0 12px}
-    .grid-3{display:grid;grid-template-columns:1fr;gap:14px}
-    .grid-2{display:grid;grid-template-columns:1fr;gap:14px}
-    .card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
-    .eyebrow{color:var(--brand2);font-weight:700;font-size:.9rem;margin-bottom:6px}
-    .step{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px}
-    blockquote{margin:0;padding:16px;border-left:4px solid var(--brand2);background:#fff;border:1px solid var(--border);border-radius:12px}
-    details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px}
-    details+details{margin-top:10px}
-    summary{cursor:pointer;font-weight:600}
-    footer{padding:40px 0 60px;border-top:1px solid var(--border);background:#fafafa}
-    .footer-wrap{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-    .contact{color:var(--muted);font-size:.95rem}
-    @media (min-width:780px){
-      .hero-grid{grid-template-columns:1.2fr .8fr;align-items:center}
-      .grid-3{grid-template-columns:repeat(3,1fr)}
-      .grid-2{grid-template-columns:repeat(2,1fr)}
-      .footer-wrap{flex-direction:row;justify-content:space-between;align-items:center}
-    }
-    .fab{position:fixed;right:18px;bottom:18px;z-index:20;background:#25D366;color:#fff;border-radius:999px;padding:12px 16px;font-weight:700;text-decoration:none;box-shadow:0 10px 24px rgba(37,211,102,.35)}
-    @media (min-width:780px){ .fab{display:none} }
-  </style>
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"ATTENTIA Studio","url":"https://attentiastudio.com.ar","logo":"https://attentiastudio.com.ar/assets/logo.png","contactPoint":[{"@type":"ContactPoint","telephone":"+54 9 2612633494","contactType":"customer service","areaServed":"AR"}]}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Service","name":"Auditoría y Optimización Web","provider":{"@type":"Organization","name":"ATTENTIA Studio"},"areaServed":"AR","description":"Diagnóstico y optimización: te encuentran primero (SEO + AEO), el sitio vuela en celular y convierte más."}
-  </script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"¿Qué incluye el diagnóstico?","acceptedAnswer":{"@type":"Answer","text":"Revisamos posicionamiento, velocidad móvil, contenido y claridad para comprar. Te damos un plan simple con prioridades."}},
-    {"@type":"Question","name":"¿Cuándo veo resultados?","acceptedAnswer":{"@type":"Answer","text":"Mejoras de velocidad y claridad en semanas; crecimiento orgánico en 60–90 días, según competencia y volumen actual."}}
-  ]}
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATTENTIA Studio — Atraé más clientes: SEO + AEO (ChatGPT, Gemini, Perplexity)</title>
+    <meta name="description" content="Diagnóstico y optimización web sin vueltas: SEO + AEO para que te encuentren en Google y en respuestas de IA (ChatGPT, Gemini, Perplexity). Tu sitio carga rápido y convierte más. Pedí tu diagnóstico por WhatsApp.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        .logo {
+            max-width: 720px; /* 4x tamaño en PC */
+            width: 100%;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 560px; /* 4x tamaño en móvil */
+            }
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .lead {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: auto;
+            color: #555;
+        }
+        section {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .eyebrow {
+            color: #6c63ff;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .cta {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cta a {
+            background: #6c63ff;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .cta a:hover {
+            background: #5a52d6;
+        }
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+        .note {
+            font-size: 0.9rem;
+            background: #eaf5ea;
+            color: #2f6f2f;
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-  <a class="skip" href="#contenido" style="position:absolute;left:-9999px">Saltar al contenido</a>
 
-  <header>
-    <div class="bar container">
-      <div class="logo">
-        <img src="assets/logo.png" alt="ATTENTIA Studio">
-      </div>
-      <nav aria-label="principal">
-        <a href="#beneficios">Beneficios</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#contacto">Contacto</a>
-        <a class="btn btn-primary" href="https://wa.me/5492612633494?text=Hola%20ATTENTIA%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">Diagnóstico gratis</a>
-      </nav>
+<header>
+    <img src="ATTENTIA.png" alt="Attentia Studio" class="logo">
+</header>
+
+<section style="text-align:center;">
+    <h1 id="hero-title">Atraé más clientes desde tu web: SEO + AEO</h1>
+    <p class="lead">Te encuentran en Google <strong>y</strong> en respuestas de IA (ChatGPT, Gemini, Perplexity). Tu sitio carga rápido en celular y la gente entiende cómo comprar. Plan simple, implementación y resultados medibles.</p>
+    <p class="note">Incluye AEO: optimización para aparecer en respuestas de ChatGPT, Gemini y Perplexity.</p>
+</section>
+
+<section>
+    <h2>¿Qué puede estar pasando?</h2>
+    <ul>
+        <li>Muchos llegan a tu web... pero se van sin comprar.</li>
+        <li>No aparecés arriba en Google.</li>
+        <li>No aparecés cuando la gente le pregunta a ChatGPT o Gemini.</li>
+        <li>Es lenta o confusa en celular.</li>
+        <li>Falta información clave (envíos, talles, garantías).</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Beneficios claros para tu negocio</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="eyebrow">Te encuentran primero</div>
+            Mejor posición en Google <strong>y en asistentes de IA</strong> (ChatGPT, Gemini, Perplexity) cuando tus clientes preguntan.
+        </div>
+        <div class="card">
+            <div class="eyebrow">Velocidad y rendimiento</div>
+            Tu web vuela en celular y carga rapidísimo.
+        </div>
+        <div class="card">
+            <div class="eyebrow">Más ventas</div>
+            Los visitantes compran más seguido porque está todo claro y fácil.
+        </div>
     </div>
-  </header>
+</section>
 
-  <main id="contenido" class="container">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-grid">
-        <div>
-          <div class="kicker">Auditoría & Optimización Web</div>
-          <h1 id="hero-title">Atraé más clientes desde tu web, sin complicarte</h1>
-          <p class="lead">Te encuentran primero, tu sitio carga rápido en celular y **la gente entiende cómo comprar**. Lo hacemos simple, te mostramos el plan y medimos resultados.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:10px">
-            <a class="btn btn-primary" href="https://wa.me/5492612633494?text=Hola%20ATTENTIA%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis" target="_blank" rel="noopener">Pedí tu diagnóstico por WhatsApp</a>
-            <a class="btn btn-ghost" href="mailto:info@attentiastudio.com.ar">Preferís email</a>
-          </div>
-          <p class="note">Respuesta rápida. Sin jerga. Plan accionable.</p>
-        </div>
-        <aside class="hero-card" aria-label="Por qué no vende tu sitio">
-          <strong>Lo que suele pasar</strong>
-          <p>Muchos entran a tu web… pero se van sin comprar. Pasa porque:</p>
-          <ul>
-            <li>No aparecés cuando te buscan.</li>
-            <li>En celular no convence o es lenta.</li>
-            <li>Falta info clara (envíos, precios, garantías).</li>
-          </ul>
-          <span class="note">Lo resolvemos con un diagnóstico completo y mejoras simples.</span>
-        </aside>
-      </div>
-    </section>
-
-    <!-- BENEFICIOS -->
-    <section id="beneficios" aria-labelledby="beneficios-title">
-      <h2 id="beneficios-title">Beneficios claros</h2>
-      <div class="grid-3">
-        <div class="card">
-          <div class="eyebrow">Te encuentran primero</div>
-          Mejor posición en Google y en asistentes digitales (donde tus clientes preguntan).
-        </div>
-        <div class="card">
-          <div class="eyebrow">Tu web vuela en celular</div>
-          Velocidad y estabilidad: no se van antes de ver lo que vendés.
-        </div>
-        <div class="card">
-          <div class="eyebrow">Más ventas</div>
-          Todo claro y fácil: el sitio guía al cliente a decidirse.
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICIOS -->
-    <section id="servicios" aria-labelledby="servicios-title">
-      <h2 id="servicios-title">Qué hacemos (sin vueltas)</h2>
-      <div class="grid-2">
-        <div class="card"><strong>No sabés qué falla</strong><br />Hacemos un diagnóstico global y te lo explicamos fácil.</div>
-        <div class="card"><strong>No aparecés en búsquedas</strong><br />Mejoramos tu visibilidad en Google y asistentes digitales.</div>
-        <div class="card"><strong>Tu web es lenta</strong><br />La optimizamos para que cargue rápido, sobre todo en celulares.</div>
-        <div class="card"><strong>El contenido no vende</strong><br />Textos claros, FAQs y productos bien presentados para cerrar ventas.</div>
-      </div>
-    </section>
-
-    <!-- PROCESO -->
-    <section id="proceso" aria-labelledby="proceso-title">
-      <h2 id="proceso-title">Cómo trabajamos</h2>
-      <div class="grid-2">
-        <div class="step"><strong>1) Analizamos</strong> tu web y detectamos frenos de venta.</div>
-        <div class="step"><strong>2) Diseñamos</strong> un plan simple y priorizado (qué hacer, cuándo y quién).</div>
-        <div class="step"><strong>3) Implementamos</strong> nosotros o coordinamos con tu equipo.</div>
-        <div class="step"><strong>4) Medimos y ajustamos</strong> cada mes para seguir creciendo.</div>
-      </div>
-    </section>
-
-    <!-- RESULTADOS -->
-    <section aria-labelledby="resultados-title">
-      <h2 id="resultados-title">Resultados</h2>
-      <div class="grid-2">
-        <blockquote>“En dos meses, las ventas online subieron 23%. La carga móvil bajó de 6s a 1,5s.”<br><span class="note">— Tienda online de ropa</span></blockquote>
-        <blockquote>“Empezamos a aparecer cuando la gente pregunta en asistentes de IA y en Google.”<br><span class="note">— Comercio retail</span></blockquote>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section aria-labelledby="faq-title">
-      <h2 id="faq-title">Preguntas frecuentes</h2>
-      <details>
-        <summary>¿Cuánto tarda el diagnóstico?</summary>
-        Entre 3 y 5 días hábiles. Te entregamos informe + plan de acción.
-      </details>
-      <details>
-        <summary>¿Pueden implementar todo?</summary>
-        Sí. Podemos hacerlo nosotros o trabajar con tu proveedor actual.
-      </details>
-    </section>
-  </main>
-
-  <!-- CTA final + contacto -->
-  <footer id="contacto">
-    <div class="container footer-wrap">
-      <div>
-        <h2 style="margin:0">¿Lo vemos ahora?</h2>
-        <p class="contact">WhatsApp: +54 9 261 263 3494 · Email: info@attentiastudio.com.ar</p>
-      </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a class="btn btn-primary" href="https://wa.me/5492612633494?text=Hola%20ATTENTIA%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis" target="_blank" rel="noopener">Diagnóstico gratis</a>
-        <a class="btn btn-ghost" href="mailto:info@attentiastudio.com.ar">Escribir por email</a>
-      </div>
+<section>
+    <h2>Qué hacemos (sin vueltas)</h2>
+    <div class="cards">
+        <div class="card"><strong>Diagnóstico global</strong><br>Qué falla y cómo mejorarlo.</div>
+        <div class="card"><strong>SEO + AEO</strong><br>Aparecer más seguido en Google y asistentes digitales.</div>
+        <div class="card"><strong>Velocidad y estabilidad</strong><br>Web rápida y firme, especialmente en celulares.</div>
+        <div class="card"><strong>Contenido que vende</strong><br>Textos claros, FAQs, productos bien presentados.</div>
+        <div class="card"><strong>Presencia en respuestas de IA (AEO)</strong><br>Preparamos contenido y datos para que los asistentes puedan citar y recomendar tu negocio.</div>
     </div>
-  </footer>
+</section>
 
-  <!-- Botón flotante mobile -->
-  <a class="fab" href="https://wa.me/5492612633494?text=Hola%20ATTENTIA%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+<section>
+    <h2>Cómo trabajamos</h2>
+    <ol>
+        <li><strong>Diagnóstico completo:</strong> vemos qué frena las ventas.</li>
+        <li><strong>Plan simple:</strong> qué hacer, cuándo y quién lo hace.</li>
+        <li><strong>Ejecutamos las mejoras</strong> (nosotros o tu desarrollador).</li>
+        <li><strong>Medimos resultados</strong> y mejoramos mes a mes.</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Preguntas frecuentes</h2>
+    <details>
+        <summary>¿Me van a recomendar ChatGPT o Gemini?</summary>
+        Trabajamos AEO: contenido original y verificable, FAQs claras, datos estructurados y autoridad de marca. Esto facilita que asistentes como ChatGPT, Gemini o Perplexity te citen en sus respuestas.
+    </details>
+</section>
+
+<div class="cta">
+    <a href="https://wa.me/5492612633494" target="_blank">Pedí tu diagnóstico gratis por WhatsApp</a>
+</div>
+
+<footer>
+    <p>© 2025 ATTENTIA Studio — info@attentiastudio.com.ar — www.attentiastudio.com.ar</p>
+</footer>
+
+<!-- robots.txt y sitemap.xml -->
+<link rel="robots" href="robots.txt">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+
+<!-- Datos estructurados -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Auditoría y Optimización Web","provider":{"@type":"Organization","name":"ATTENTIA Studio"},"areaServed":"AR","description":"Diagnóstico y optimización: SEO + AEO (Answer Engine Optimization) para aparecer en Google y en respuestas de IA (ChatGPT, Gemini, Perplexity). Velocidad móvil, UX y conversión."}
+</script>
+
 </body>
 </html>
