@@ -1,305 +1,323 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATTENTIA Studio — Hacemos que tu web venda</title>
+  <meta name="description" content="Hacemos que tu web venda: te encuentran en Google y asistentes de IA (ChatGPT, Gemini, Perplexity, Grok y más). Sitio rápido en celular, checkout claro y más recompras. Pedí tu diagnóstico gratis por WhatsApp.">
+  <link rel="canonical" href="https://attentiastudio.com.ar/">
 
-  <title>ATTENTIA Studio — Atrae más clientes: SEO + AEO (ChatGPT, Gemini, Perplexity)</title>
-  <meta name="description" content="Diagnóstico y optimización web sin vueltas. SEO + AEO para que te encuentren en Google y en respuestas de IA (ChatGPT, Gemini, Perplexity y más). Tu sitio carga rápido y convierte más. Pedí tu diagnóstico por WhatsApp." />
-  <link rel="canonical" href="https://attentiastudio.com.ar/" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="ATTENTIA Studio — Hacemos que tu web venda">
+  <meta property="og:description" content="Te encuentran en Google y asistentes de IA. Tu web se vuelve rápida y clara para comprar. Resultados medibles.">
+  <meta property="og:url" content="https://attentiastudio.com.ar/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://attentiastudio.com.ar/assets/og-cover.jpg">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="ATTENTIA Studio" />
-  <meta property="og:title" content="Atraé más clientes: SEO + AEO (ChatGPT, Gemini, Perplexity)" />
-  <meta property="og:description" content="Te encuentran en Google y en respuestas de IA. Sitios rápidos que convierten. Plan simple, implementación y resultados medibles." />
-  <meta property="og:url" content="https://attentiastudio.com.ar/" />
-  <meta property="og:image" content="https://attentiastudio.com.ar/assets/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#6c63ff" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ATTENTIA Studio — Hacemos que tu web venda">
+  <meta name="twitter:description" content="Te encuentran en Google y asistentes de IA. Tu web se vuelve rápida y clara para comprar.">
+  <meta name="twitter:image" content="https://attentiastudio.com.ar/assets/og-cover.jpg">
 
-  <!-- (Opcional) hoja externa si la usás -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Favicons (colocá tus archivos en /assets/) -->
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
 
   <style>
+    /* ====== Diseño base ====== */
     :root{
-      --brand:#6c63ff;
-      --brand-600:#5a52d6;
-      --text:#333;
-      --muted:#555;
-      --bg:#fff;
-      --card:#f7f7f8;
-      --note-bg:#eaf5ea;
-      --note-text:#2f6f2f;
-      --maxw:1000px;
-      --radius:10px;
-      --shadow:0 2px 10px rgba(0,0,0,.06);
+      --bg:#ffffff;
+      --text:#121212;
+      --muted:#5d5d5d;
+      --brand-start:#56c1a6;   /* verde del logo (aprox) */
+      --brand-end:#7c78ff;     /* violeta del logo (aprox) */
+      --brand-dark:#1b1b1b;
+      --card:#f7f8fb;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:18px;
+      --maxw:1100px;
     }
-    /* Reset fino */
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-
-    header{
-      text-align:center;
-      padding:28px 16px 8px;
-    }
-    /* Logo grande en desktop, un poco menor en móvil */
-    .logo{
-      width:100%;
-      max-width:560px;      /* desktop */
-      height:auto;
-    }
-    @media (max-width:768px){
-      .logo{max-width:360px;} /* móvil */
-    }
-
-    main{display:block}
-    section{
-      padding:20px;
-      max-width:var(--maxw);
-      margin:auto;
-    }
-
-    h1{
-      font-size:clamp(1.6rem,2.5vw,2.2rem);
-      line-height:1.25;
-      margin:0 0 10px 0;
-      text-align:center;
-      text-wrap:balance;
-    }
-    .lead{
-      font-size:1.1rem;
-      max-width:900px;
-      margin:0 auto;
-      color:var(--muted);
-      text-align:center;
-    }
-    .note{
-      font-size:1rem;
-      background:var(--note-bg);
-      color:var(--note-text);
-      padding:10px 14px;
-      display:inline-block;
-      border-radius:8px;
-      margin:14px auto 0;
-      box-shadow:var(--shadow);
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:18px;
-      margin-top:10px;
-    }
-    .card{
-      background:var(--card);
-      padding:18px;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .eyebrow{
-      color:var(--brand);
-      font-size:.9rem;
-      margin-bottom:6px;
-      font-weight:700;
-      letter-spacing:.2px;
-      text-transform:none;
-    }
-
-    ul{padding-left:18px}
-    li+li{margin-top:6px}
-
-    .cta{
-      text-align:center;
-      margin:32px 0 48px;
-    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);}
+    body{font-family: system-ui,-apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji"; line-height:1.5}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
     .btn{
-      background:var(--brand);
-      color:#fff;
-      padding:12px 22px;
-      border-radius:8px;
-      text-decoration:none;
-      font-size:1.05rem;
-      display:inline-block;
-      box-shadow:var(--shadow);
-      transition:transform .06s ease, background .15s ease;
+      display:inline-block; padding:14px 22px; border-radius:999px; font-weight:700;
+      background:linear-gradient(135deg,var(--brand-start),var(--brand-end)); color:#fff; box-shadow:var(--shadow);
+      transition:transform .12s ease, box-shadow .12s ease;
     }
-    .btn:hover{background:var(--brand-600);transform:translateY(-1px)}
-    .btn:active{transform:translateY(0)}
+    .btn:hover{ transform:translateY(-1px); box-shadow:0 12px 34px rgba(0,0,0,.12) }
+    .btn-outline{
+      background:#fff; border:2px solid transparent;
+      border-image: linear-gradient(135deg,var(--brand-start),var(--brand-end)) 1;
+      color:var(--brand-dark);
+    }
+    .pill{font-size:.9rem; padding:8px 12px; border-radius:999px; background:rgba(124,120,255,.08); display:inline-block}
 
-    footer{
-      background:#1f1f1f;
-      color:#eee;
-      text-align:center;
-      padding:18px 12px;
-      font-size:.92rem;
+    /* ====== Hero ====== */
+    header.hero{
+      position:relative; overflow:hidden; padding:28px 0 54px;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(124,120,255,.10), transparent 60%),
+        radial-gradient(900px 500px at -10% 10%, rgba(86,193,166,.12), transparent 60%);
     }
-    footer a{color:#cfd9ff;text-decoration:none}
-    footer a:hover{text-decoration:underline}
+    .hero-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center }
+    .brand{ display:flex; gap:14px; align-items:center; margin-bottom:12px}
+    .brand img{ width:64px; height:auto }
+    .brand h1{ font-size:1.05rem; letter-spacing:.12em; text-transform:uppercase; margin:0; color:var(--muted)}
+    .eyebrow{ margin:8px 0 0; color:var(--muted) }
+    h2.big{ font-size: clamp(2.2rem, 4.5vw, 3.4rem); line-height:1.07; margin:10px 0 12px; }
+    .lead{ font-size:1.1rem; color:#303030; margin-bottom:22px }
+    .cta-wrap{ display:flex; gap:14px; flex-wrap:wrap }
+    .card{
+      background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)
+    }
+    .check{ display:flex; gap:10px; align-items:flex-start; margin:10px 0 }
+    .check svg{ flex:0 0 22px }
 
-    /* Accesibilidad: foco visible */
-    a:focus-visible, summary:focus-visible, button:focus-visible{
-      outline:3px solid var(--brand);
-      outline-offset:2px;
-      border-radius:6px;
-    }
+    /* ====== Sections ====== */
+    section{ padding:56px 0 }
+    h3{ font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin:0 0 12px }
+    .sub{ color:var(--muted); margin:0 0 14px }
+    .grid-3{ display:grid; gap:18px; grid-template-columns: repeat(3,1fr) }
+    .grid-2{ display:grid; gap:18px; grid-template-columns: repeat(2,1fr) }
+    .highlight{ background:linear-gradient(135deg, rgba(86,193,166,.14), rgba(124,120,255,.14)); border-radius:var(--radius); padding:18px }
 
-    details{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:10px 14px;
-      box-shadow:var(--shadow);
+    /* ====== Footer ====== */
+    footer{ background:#0f0f10; color:#d8d8d8; padding:42px 0 24px; }
+    footer a{ color:#fff; text-decoration:underline }
+    .footgrid{ display:grid; gap:18px; grid-template-columns: 1.3fr .7fr }
+    .small{ color:#9a9a9a; font-size:.92rem }
+
+    /* ====== Floating WhatsApp ====== */
+    .wa-float{
+      position: fixed; right:18px; bottom:18px; z-index:80;
+      width:58px; height:58px; border-radius:50%;
+      background:linear-gradient(135deg,var(--brand-start),var(--brand-end)); box-shadow:var(--shadow);
+      display:grid; place-items:center;
     }
-    summary{cursor:pointer;font-weight:600}
+    .wa-float img{ width:28px; height:28px; filter: invert(1) }
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0 }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns:1fr; }
+      .grid-3{ grid-template-columns:1fr; }
+      .grid-2{ grid-template-columns:1fr; }
+      .footgrid{ grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <!-- Intenta cargar primero assets/logo.png; si no existe, usa ATTENTIA.png -->
-    <picture>
-      <source srcset="assets/logo.png" />
-      <img src="ATTENTIA.png" alt="ATTENTIA Studio — Auditoría y Optimización Web" class="logo" />
-    </picture>
+  <!-- WhatsApp floating -->
+  <a class="wa-float" aria-label="Escribir por WhatsApp"
+     href="https://wa.me/5492617088013?text=Hola%20ATTENTIA%20Studio%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis%20para%20vender%20m%C3%A1s%20con%20mi%20web."
+     target="_blank" rel="noopener">
+    <img src="/assets/whatsapp.svg" alt="" />
+    <span class="sr-only">WhatsApp</span>
+  </a>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="brand">
+          <img src="/assets/logo-attentia.svg" alt="ATTENTIA Studio — logo">
+          <h1>ATTENTIA Studio</h1>
+        </div>
+
+        <p class="eyebrow pill">Diagnóstico gratis</p>
+        <h2 class="big">Hacemos que tu web venda</h2>
+
+        <p class="lead">
+          Antes vendías más y ahora no. O lanzaste tu sitio y las ventas no se disparan.
+          Google, ChatGPT, Gemini… ni saben que existís. Cambiamos eso.
+        </p>
+
+        <div class="cta-wrap">
+          <a class="btn" href="#cta">Quiero mi diagnóstico gratis</a>
+          <a class="btn btn-outline" href="#como-funciona">Cómo trabajamos</a>
+        </div>
+      </div>
+
+      <div class="card" aria-labelledby="id-problemas">
+        <h3 id="id-problemas">Lo que pasa hoy</h3>
+        <div class="check">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 7L9 18l-5-5" stroke="url(#g1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g1" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#56c1a6"/><stop offset="1" stop-color="#7c78ff"/></linearGradient></defs></svg>
+          <div>La gente entra… pero no compra.</div>
+        </div>
+        <div class="check">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 7L9 18l-5-5" stroke="url(#g2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g2" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#56c1a6"/><stop offset="1" stop-color="#7c78ff"/></linearGradient></defs></svg>
+          <div>En celular es lenta o confusa.</div>
+        </div>
+        <div class="check">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 7L9 18l-5-5" stroke="url(#g3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="g3" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#56c1a6"/><stop offset="1" stop-color="#7c78ff"/></linearGradient></defs></svg>
+          <div>No aparecés en Google ni en asistentes de IA (ChatGPT, Gemini, Perplexity, Grok...).</div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section aria-labelledby="hero-title" style="text-align:center;">
-      <h1 id="hero-title">ATRAE MÁS CLIENTES DESDE TU WEB: SEO + AEO</h1>
-      <p class="lead">
-        Te encuentran en Google <strong>y</strong> en respuestas de IA (ChatGPT, Gemini, Perplexity y más).
-        Tu sitio carga rápido en celular y la gente entiende cómo comprar. Plan simple, implementación y resultados medibles.
-      </p>
-      <p class="note" role="note">Incluye AEO: optimización para aparecer en respuestas de ChatGPT, Gemini, Perplexity y más.</p>
-    </section>
-
-    <section aria-labelledby="sec-problemas">
-      <h2 id="sec-problemas">¿Qué puede estar pasando?</h2>
-      <ul>
-        <li>Muchos llegan a tu web… pero se van sin comprar.</li>
-        <li>No aparecés arriba en Google.</li>
-        <li>No aparecés cuando la gente le pregunta a ChatGPT o Gemini.</li>
-        <li>Es lenta o confusa en celular.</li>
-        <li>Falta información clave (envíos, talles, garantías).</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="sec-beneficios">
-      <h2 id="sec-beneficios">Beneficios claros para tu negocio</h2>
-      <div class="cards">
-        <div class="card">
-          <div class="eyebrow">Te encuentran primero</div>
-          Mejor posición en Google <strong>y en asistentes de IA</strong> (ChatGPT, Gemini, Perplexity) cuando tus clientes preguntan.
-        </div>
-        <div class="card">
-          <div class="eyebrow">Velocidad y rendimiento</div>
-          Tu web vuela en celular y carga rapidísimo.
-        </div>
-        <div class="card">
-          <div class="eyebrow">Más ventas</div>
-          Los visitantes compran más seguido porque está todo claro y fácil.
+  <!-- CAUSA -->
+  <section>
+    <div class="container grid-2">
+      <div>
+        <h3>La verdadera causa</h3>
+        <p class="sub"><strong>No es tu producto. No es tu precio.</strong> El mundo online cambió y tu web no se adaptó.</p>
+        <div class="highlight">
+          <ul>
+            <li>Google y las IA premian sitios rápidos, claros y actualizados.</li>
+            <li>Los asistentes inteligentes recomiendan negocios que entienden y reconocen.</li>
+            <li>El celular es la caja registradora: si tu web falla ahí, perdés ventas.</li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <section aria-labelledby="sec-servicios">
-      <h2 id="sec-servicios">Qué hacemos (sin vueltas)</h2>
-      <div class="cards">
-        <div class="card"><strong>Diagnóstico global</strong><br>Qué falla y cómo mejorarlo.</div>
-        <div class="card"><strong>SEO + AEO</strong><br>Aparecer más seguido en Google y asistentes digitales.</div>
-        <div class="card"><strong>Velocidad y estabilidad</strong><br>Web rápida y firme, especialmente en celulares.</div>
-        <div class="card"><strong>Contenido que vende</strong><br>Textos claros, FAQs, productos bien presentados.</div>
-        <div class="card"><strong>Presencia en respuestas de IA (AEO)</strong><br>Preparamos contenido y datos para que los asistentes puedan citar y recomendar tu negocio.</div>
+      <div class="card">
+        <h3>Resultados en números</h3>
+        <p class="sub">Lo que solemos ver al optimizar:</p>
+        <ul>
+          <li><strong>Visibilidad</strong>: aparecés en Google y asistentes de IA.</li>
+          <li><strong>Conversión</strong>: más compras por cada 100 visitas.</li>
+          <li><strong>Velocidad</strong>: carga rápida en celular.</li>
+        </ul>
+        <p class="small">Ejemplo: de 1 venta cada 100 visitas a 7 ventas cada 100 visitas (varía por rubro y punto de partida).</p>
       </div>
-    </section>
-
-    <section aria-labelledby="sec-proceso">
-      <h2 id="sec-proceso">Cómo trabajamos</h2>
-      <ol>
-        <li><strong>Diagnóstico completo:</strong> vemos qué frena las ventas.</li>
-        <li><strong>Plan simple:</strong> qué hacer, cuándo y quién lo hace.</li>
-        <li><strong>Ejecutamos las mejoras</strong> (nosotros o tu desarrollador).</li>
-        <li><strong>Medimos resultados</strong> y mejoramos mes a mes.</li>
-      </ol>
-    </section>
-
-    <section aria-labelledby="sec-faq">
-      <h2 id="sec-faq">Preguntas frecuentes</h2>
-      <details>
-        <summary>¿Me van a recomendar ChatGPT o Gemini?</summary>
-        <p>Trabajamos AEO: contenido original y verificable, FAQs claras, datos estructurados y autoridad de marca. Esto facilita que asistentes como ChatGPT, Gemini o Perplexity te citen en sus respuestas.</p>
-      </details>
-    </section>
-
-    <div class="cta">
-      <a class="btn" href="https://wa.me/5492612633494" target="_blank" rel="noopener noreferrer"
-         aria-label="Pedí tu diagnóstico gratis por WhatsApp">
-        Pedí tu diagnóstico gratis por WhatsApp
-      </a>
     </div>
-  </main>
+  </section>
 
+  <!-- SOLUCIÓN -->
+  <section id="solucion">
+    <div class="container">
+      <h3>La solución ATTENTIA</h3>
+      <p class="sub">Plan simple, implementación profesional, resultados medibles.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <strong>Te encuentran en Google y asistentes de IA</strong>
+          <p>Presencia en Google y en ChatGPT, Gemini, Perplexity, Grok y más.</p>
+        </div>
+        <div class="card">
+          <strong>Tu web vende</strong>
+          <p>Rápida, clara y optimizada para el celular. Checkout sin fricciones.</p>
+        </div>
+        <div class="card">
+          <strong>Vuelven a comprarte</strong>
+          <p>Recordatorios y ofertas automatizadas para aumentar la recompra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN ES -->
+  <section>
+    <div class="container">
+      <h3>¿Es para vos?</h3>
+      <div class="grid-2">
+        <div class="card">
+          <strong>Comerciantes con caída de ventas</strong>
+          <p>Antes vendías más y ahora no. Recuperamos visibilidad y conversión.</p>
+        </div>
+        <div class="card">
+          <strong>Quienes recién lanzan su web</strong>
+          <p>Publicaste tu sitio y las ventas no se disparan. Te ayudamos a despegar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO TRABAJAMOS -->
+  <section id="como-funciona">
+    <div class="container">
+      <h3>Cómo trabajamos</h3>
+      <div class="grid-3">
+        <div class="card"><strong>1) Diagnóstico</strong><br>Vemos qué frena tus ventas.</div>
+        <div class="card"><strong>2) Plan simple</strong><br>Qué hacer, cómo y quién lo hace.</div>
+        <div class="card"><strong>3) Implementación y mejora</strong><br>Ejecutamos, medimos y optimizamos.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="container">
+      <div class="card" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap">
+        <div>
+          <h3>Pedí tu diagnóstico gratis</h3>
+          <p class="sub">Te mostramos qué está frenando tus ventas y cómo resolverlo.</p>
+        </div>
+        <a class="btn" target="_blank" rel="noopener"
+           href="https://wa.me/5492617088013?text=Hola%20ATTENTIA%20Studio%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis.">
+           Hablamos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ breve -->
+  <section aria-labelledby="faq">
+    <div class="container">
+      <h3 id="faq">Preguntas frecuentes</h3>
+      <div class="grid-2">
+        <div class="card">
+          <strong>¿Cuándo veo resultados?</strong>
+          <p>En 30 días deberías notar mejoras en velocidad y visibilidad. La conversión depende del rubro y punto de partida.</p>
+        </div>
+        <div class="card">
+          <strong>¿Necesito cambiar todo mi sitio?</strong>
+          <p>No siempre. Priorizamos cambios de alto impacto con baja fricción. Si conviene rediseñar, te lo decimos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>
-      © 2025 ATTENTIA Studio — <a href="mailto:info@attentiastudio.com.ar">info@attentiastudio.com.ar</a> —
-      <a href="https://attentiastudio.com.ar/">www.attentiastudio.com.ar</a>
-    </p>
+    <div class="container footgrid">
+      <div>
+        <img src="/assets/logo-attentia.png" alt="ATTENTIA Studio" style="width:120px; opacity:.95; margin-bottom:8px">
+        <p class="small">Hacemos que tu web venda. Visibilidad en Google y asistentes de IA. Sitios rápidos en celular y listos para convertir.</p>
+      </div>
+      <div>
+        <p><strong>Contacto</strong></p>
+        <p><a href="mailto:info@attentiastudio.com.ar">info@attentiastudio.com.ar</a></p>
+        <p><a href="https://wa.me/5492617088013" target="_blank" rel="noopener">+54 9 261 7088013</a></p>
+        <p><a href="https://attentiastudio.com.ar/">attentiastudio.com.ar</a></p>
+      </div>
+    </div>
+    <div class="container" style="margin-top:18px">
+      <p class="small">© <span id="year"></span> ATTENTIA Studio. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
-  <!-- (Opcional) referencias: algunos navegadores ignoran estos rel; mantener no daña -->
-  <link rel="robots" href="robots.txt" />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
-
-  <!-- Datos estructurados: Service (AEO/SEO) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "name":"Auditoría y Optimización Web (SEO + AEO)",
-    "serviceType":"SEO y Answer Engine Optimization",
-    "provider":{
-      "@type":"Organization",
-      "name":"ATTENTIA Studio",
-      "url":"https://attentiastudio.com.ar",
-      "logo":"https://attentiastudio.com.ar/assets/logo.png"
-    },
-    "areaServed":"AR",
-    "description":"Diagnóstico y optimización: SEO + AEO para aparecer en Google y en respuestas de IA (ChatGPT, Gemini, Perplexity). Velocidad móvil, UX y conversión.",
-    "offers":{
-      "@type":"Offer",
-      "availability":"https://schema.org/InStock",
-      "priceCurrency":"ARS",
-      "price":"0",
-      "description":"Diagnóstico inicial sin costo y plan de acción."
-    }
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ATTENTIA Studio",
+    "url": "https://attentiastudio.com.ar/",
+    "logo": "https://attentiastudio.com.ar/assets/logo-attentia.png",
+    "email": "info@attentiastudio.com.ar",
+    "telephone": "+54 9 261 7088013",
+    "sameAs": [],
+    "description": "Hacemos que tu web venda: te encuentran en Google y asistentes de IA. Sitio rápido y claro en celular. Resultados medibles."
   }
   </script>
 
-  <!-- Datos estructurados: FAQ para AEO/SEO -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"¿Me van a recomendar ChatGPT o Gemini?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Sí. Trabajamos AEO con contenido original, FAQs claras, datos estructurados (schema) y señal de autoridad. Eso facilita que ChatGPT, Gemini y Perplexity citen el sitio en sus respuestas."
-        }
-      }
-    ]
-  }
+  <script>
+    // año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // scroll suave
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
   </script>
 </body>
 </html>
