@@ -18,6 +18,7 @@
             text-align: center;
             padding: 20px;
         }
+        /* Logo 4x más grande (PC y móvil) */
         .logo {
             max-width: 720px; /* 4x tamaño en PC */
             width: 100%;
@@ -95,7 +96,11 @@
 <body>
 
 <header>
-    <img src="ATTENTIA.png" alt="Attentia Studio" class="logo">
+    <!-- Carga primero assets/logo.png y, si no existe, usa ATTENTIA.png en la raíz -->
+    <picture>
+        <source srcset="assets/logo.png">
+        <img src="ATTENTIA.png" alt="Attentia Studio" class="logo">
+    </picture>
 </header>
 
 <section style="text-align:center;">
@@ -163,7 +168,7 @@
 </section>
 
 <div class="cta">
-    <a href="https://wa.me/5492612633494" target="_blank">Pedí tu diagnóstico gratis por WhatsApp</a>
+    <a href="https://wa.me/5492612633494" target="_blank" rel="noopener">Pedí tu diagnóstico gratis por WhatsApp</a>
 </div>
 
 <footer>
