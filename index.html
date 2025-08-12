@@ -1,148 +1,72 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ATTENTIA Studio — Hacemos que tu web venda</title>
-  <meta name="description" content="Hacemos que tu web venda: te encuentran en Google y asistentes de IA (ChatGPT, Gemini, Perplexity, Grok y más). Sitio rápido en celular, checkout claro y más recompras. Pedí tu diagnóstico gratis por WhatsApp.">
-  <link rel="canonical" href="https://attentiastudio.com.ar/">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="ATTENTIA Studio — Hacemos que tu web venda">
-  <meta property="og:description" content="Te encuentran en Google y asistentes de IA. Tu web se vuelve rápida y clara para comprar. Resultados medibles.">
-  <meta property="og:url" content="https://attentiastudio.com.ar/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://attentiastudio.com.ar/assets/og-cover.jpg">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ATTENTIA Studio — Hacemos que tu web venda">
-  <meta name="twitter:description" content="Te encuentran en Google y asistentes de IA. Tu web se vuelve rápida y clara para comprar.">
-  <meta name="twitter:image" content="https://attentiastudio.com.ar/assets/og-cover.jpg">
-
-  <!-- Favicon -->
-  <link rel="icon" href="/assets/favicon.png" type="image/png">
-
+  <title>Attentia — Tu web puede vender. Yo te muestro cómo.</title>
+  <meta name="description" content="Diagnóstico y optimización de sitios comerciales. Hago que tu web vuelva a vender con mejoras concretas en velocidad, UX móvil, contenidos que convierten y visibilidad en buscadores y asistentes de IA." />
+  <meta name="theme-color" content="#5e27e3" />
+  <link rel="icon" href="logo-attentia.svg" type="image/svg+xml" />
   <style>
     :root{
-      --bg:#ffffff;
-      --text:#121212;
-      --muted:#5d5d5d;
-      --brand-start:#56c1a6;
-      --brand-end:#7c78ff;
-      --brand-dark:#1b1b1b;
-      --card:#f7f8fb;
-      --shadow:0 10px 30px rgba(0,0,0,.08);
-      --radius:18px;
-      --maxw:1100px;
+      --p1: #5eb29c;
+      --p2: #60b29c;
+      --p3: #5ea2a4;
+      --p4: #5f94ac;
+      --p5: #5f75bb;
+      --p6: #5e52cd;
+      --p7: #5d36da;
+      --p8: #5e27e3;
+      --black: #000000;
+      --brand-accent: var(--p6);
+      --brand-accent-2: var(--p8);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);}
-    body{font-family: system-ui,-apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial; line-height:1.5}
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
-    .btn{
-      display:inline-block; padding:14px 22px; border-radius:999px; font-weight:700;
-      background:linear-gradient(135deg,var(--brand-start),var(--brand-end)); color:#fff; box-shadow:var(--shadow);
-      transition:transform .12s ease, box-shadow .12s ease;
-    }
-    .btn:hover{ transform:translateY(-1px); box-shadow:0 12px 34px rgba(0,0,0,.12) }
-    .btn-outline{
-      background:#fff; border:2px solid transparent;
-      border-image: linear-gradient(135deg,var(--brand-start),var(--brand-end)) 1;
-      color:var(--brand-dark);
-    }
-    .pill{font-size:.9rem; padding:8px 12px; border-radius:999px; background:rgba(124,120,255,.08); display:inline-block}
-
-    /* Hero */
-    header.hero{
-      position:relative; overflow:hidden; padding:28px 0 54px;
-      background:
-        radial-gradient(1200px 600px at 80% -10%, rgba(124,120,255,.10), transparent 60%),
-        radial-gradient(900px 500px at -10% 10%, rgba(86,193,166,.12), transparent 60%);
-    }
-    .hero-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center }
-    .brand{ display:flex; gap:14px; align-items:center; margin-bottom:12px}
-    .brand img{ width:110px; height:auto }
-    @media (max-width: 600px){
-      .brand img{ width:90px; }
-    }
-    .eyebrow{ margin:8px 0 0; color:var(--muted) }
-    h2.big{ font-size: clamp(2.2rem, 4.5vw, 3.4rem); line-height:1.07; margin:10px 0 12px; }
-    .lead{ font-size:1.1rem; color:#303030; margin-bottom:22px }
-    .cta-wrap{ display:flex; gap:14px; flex-wrap:wrap }
-    .card{
-      background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)
-    }
-    .check{ display:flex; gap:10px; align-items:flex-start; margin:10px 0 }
-    .check svg{ flex:0 0 22px }
-
-    section{ padding:56px 0 }
-    h3{ font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin:0 0 12px }
-    .sub{ color:var(--muted); margin:0 0 14px }
-    .grid-3{ display:grid; gap:18px; grid-template-columns: repeat(3,1fr) }
-    .grid-2{ display:grid; gap:18px; grid-template-columns: repeat(2,1fr) }
-    .highlight{ background:linear-gradient(135deg, rgba(86,193,166,.14), rgba(124,120,255,.14)); border-radius:var(--radius); padding:18px }
-
-    footer{ background:#0f0f10; color:#d8d8d8; padding:42px 0 24px; }
-    footer a{ color:#fff; text-decoration:underline }
-    .footgrid{ display:grid; gap:18px; grid-template-columns: 1.3fr .7fr }
-    .small{ color:#9a9a9a; font-size:.92rem }
-
-    .wa-float{
-      position: fixed; right:18px; bottom:18px; z-index:80;
-      width:58px; height:58px; border-radius:50%;
-      background:linear-gradient(135deg,var(--brand-start),var(--brand-end)); box-shadow:var(--shadow);
-      display:grid; place-items:center;
-    }
-    .wa-float img{ width:28px; height:28px; filter: invert(1) }
-    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0 }
-
-    @media (max-width: 900px){
-      .hero-grid{ grid-template-columns:1fr; }
-      .grid-3{ grid-template-columns:1fr; }
-      .grid-2{ grid-template-columns:1fr; }
-      .footgrid{ grid-template-columns:1fr; }
-    }
+    body {font-family: Arial, sans-serif; margin:0; padding:0; background:#fff; color:#333;}
+    header {background:#fff; padding:1rem; display:flex; align-items:center; justify-content:space-between;}
+    header img {height:40px;}
+    nav a {margin-left: 1rem; text-decoration:none; color: var(--p3); font-weight: bold;}
+    h1 {color: var(--black); font-size:2rem; margin-bottom: .5rem;}
+    .notice {background: var(--brand-accent); color:#fff; padding:1rem; border-radius:8px; margin-top:1rem;}
+    footer {margin-top:2rem; padding:1rem; background:#f5f5f5;}
   </style>
 </head>
 <body>
-
-  <!-- WhatsApp -->
-  <a class="wa-float" aria-label="Escribir por WhatsApp"
-     href="https://wa.me/5492617088013?text=Hola%20ATTENTIA%20Studio%2C%20quiero%20mi%20diagn%C3%B3stico%20gratis."
-     target="_blank" rel="noopener">
-    <img src="/assets/whatsapp.svg" alt="" />
-    <span class="sr-only">WhatsApp</span>
-  </a>
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="brand">
-          <img src="/assets/logo-attentia.svg" alt="ATTENTIA Studio — logo">
-        </div>
-
-        <p class="eyebrow pill">Diagnóstico gratis</p>
-        <h2 class="big">Hacemos que tu web venda</h2>
-
-        <p class="lead">
-          Antes vendías más y ahora no. O lanzaste tu sitio y las ventas no se disparan.
-          Google, ChatGPT, Gemini… ni saben que existís. Cambiamos eso.
-        </p>
-
-        <div class="cta-wrap">
-          <a class="btn" href="#cta">Quiero mi diagnóstico gratis</a>
-          <a class="btn btn-outline" href="#como-funciona">Cómo trabajamos</a>
-        </div>
-      </div>
-      <!-- Resto del contenido del hero -->
+  <header>
+    <div>
+      <img src="logo-attentia.svg" alt="Attentia Studio">
     </div>
+    <nav>
+      <a href="#que-hago">Qué hago</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
-
-  <!-- Aquí seguiría el resto del contenido (causa, solución, etc.) igual que antes -->
-
+  <main>
+    <section>
+      <h1>Tu web puede vender. Yo te muestro cómo.</h1>
+      <p>Soy JuanJo Cuccia. Diagnostico tu web, hago los ajustes clave y te dejo un plan simple para que entren clientes y compren.</p>
+      <div class="notice"><b>Promesa operacional:</b> Si en 30 días no ves señales tempranas en los objetivos definidos, te acompaño 1 mes extra sin costo.</div>
+    </section>
+    <section id="que-hago">
+      <h2>Qué hago por tu negocio</h2>
+      <ul>
+        <li>Diagnóstico claro y entendible</li>
+        <li>Mejoro velocidad y experiencia móvil</li>
+        <li>Optimizo contenido para que convierta</li>
+        <li>Te vuelven a encontrar en buscadores y asistentes</li>
+      </ul>
+    </section>
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <ul>
+        <li>Email: <a href="mailto:info@attentiastudio.com.ar">info@attentiastudio.com.ar</a></li>
+        <li>WhatsApp: <a href="https://wa.me/5492617088013" target="_blank">+54 9 261 7088013</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/juanjocuccia/" target="_blank">juanjocuccia</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Attentia Studio. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
