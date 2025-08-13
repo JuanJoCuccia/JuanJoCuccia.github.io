@@ -180,7 +180,7 @@
             <span class="badge">“Mi web no convierte.”</span>
           </div>
           <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
-            <a class="btn btn-primary" href="#contacto">Quiero mi diagnóstico</a>
+            <a class="btn btn-primary js-wa-dx" href="https://wa.me/5492617088013" target="_blank" rel="noopener">Quiero mi diagnóstico</a>
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/juanjocuccia/" target="_blank" rel="noopener" aria-label="LinkedIn de JuanJo">LinkedIn</a>
           </div>
         </div>
@@ -323,7 +323,7 @@
   <!-- Sticky CTA (mobile) -->
   <div class="sticky-cta" aria-hidden="true">
     <a class="btn btn-primary" href="https://wa.me/5492617088013" target="_blank" rel="noopener">WhatsApp</a>
-    <a class="btn btn-ghost" href="#contacto">Quiero mi diagnóstico</a>
+    <a class="btn btn-ghost js-wa-dx" href="https://wa.me/5492617088013" target="_blank" rel="noopener">Quiero mi diagnóstico</a>
   </div>
 
   <!-- Estructurados básicos -->
@@ -492,6 +492,21 @@
     }
   ]
 }
+</script>
+<script>
+(function(){
+  const botones = document.querySelectorAll('a.js-wa-dx');
+  if(!botones.length) return;
+  botones.forEach(btn=>{
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      const base = 'https://wa.me/5492617088013';
+      const msg = `Hola JuanJo, quiero mi diagnóstico para mi web. Vengo desde la landing de Attentia. URL: ${location.href}`;
+      const url = `${base}?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank', 'noopener');
+    });
+  });
+})();
 </script>
 
 </body>
