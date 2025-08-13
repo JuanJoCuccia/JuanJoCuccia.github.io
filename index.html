@@ -118,9 +118,11 @@
     .foot-legal{border-top:1px solid rgba(255,255,255,.08); margin-top:20px; padding-top:16px; font-size:12px; color:#b9c3d1}
 
     /* Sticky mobile CTA */
-    .sticky-cta{
-      position:fixed; bottom:12px; left:50%; transform:translateX(-50%);
-      display:flex; gap:10px; padding:10px; background:#fff; border:1px solid var(--border); border-radius:999px; box-shadow:var(--shadow); z-index:60
+.sticky-cta{
+  position:fixed; bottom:calc(12px + env(safe-area-inset-bottom)); left:50%; transform:translateX(-50%);
+  display:flex; gap:10px; padding:10px; background:#fff; border:1px solid var(--border);
+  border-radius:999px; box-shadow:var(--shadow); z-index:60;
+  backdrop-filter:saturate(150%) blur(8px);
     }
 
     /* Responsive */
