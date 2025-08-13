@@ -356,5 +356,83 @@
       setInterval(()=>{ useB = !useB; h.textContent = useB ? B : A; }, 12000);
     })();
   </script>
+<!-- JSON-LD Ampliado -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ATTENTIA Studio",
+  "url": "https://www.attentiastudio.com.ar/",
+  "logo": "https://www.attentiastudio.com.ar/logo-attentia.svg",
+  "founder": "JuanJo Cuccia",
+  "email": "info@attentiastudio.com.ar",
+  "telephone": "+54 9 261 7088013",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mendoza",
+    "addressCountry": "AR"
+  },
+  "sameAs": ["https://www.linkedin.com/in/juanjocuccia/"],
+  "serviceType": "Optimización web comercial, SEO, AEO",
+  "areaServed": "Hispanoamérica",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Optimización Web",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Auditoría de sitio web",
+          "description": "Análisis de fricciones, velocidad, UX y visibilidad en buscadores."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Optimización SEO y AEO",
+          "description": "Ajuste de contenidos, estructura y datos para buscadores y asistentes de IA."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<!-- FAQPage JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda y cómo empezamos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En 48 h te entrego un diagnóstico inicial y las 10 acciones priorizadas para 30 días. Empezamos con una llamada corta y acceso a tu sitio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito cambiar de plataforma o rehacer mi web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No necesariamente. Primero optimizo lo que tenés. Sólo si la base no soporta mejoras, te propongo alternativas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si no veo mejoras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Activa mi promesa: si en 30 días no aparecen señales tempranas en lo que definimos, te acompaño 1 mes extra sin costo."
+      }
+    }
+  ]
+}
+</script>
+
 </body>
 </html>
