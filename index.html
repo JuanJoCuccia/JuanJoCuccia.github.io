@@ -132,6 +132,11 @@
       .list{grid-template-columns:1fr}
       .foot-grid{grid-template-columns:1fr}
       nav ul{display:none}
+      /* Evitar solapamiento del logo/título en mobile */
+      header .cta{ display:none; }           /* oculto CTA del header en mobile */
+      .btn{ padding:10px 14px; }             /* leve ajuste de botones en mobile */
+      /* Reservo espacio para la barra flotante en mobile */
+      body{ padding-bottom:96px; }
     }
   </style>
 </head>
