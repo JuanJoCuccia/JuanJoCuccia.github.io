@@ -19,8 +19,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:url" content="https://www.attentiastudio.com.ar/" />
   <meta property="og:title" content="Tu web puede vender. Yo te muestro cómo." />
   <meta property="og:description" content="Diagnóstico y optimización para sitios comerciales. Si en 30 días no ves señales tempranas, te acompaño 1 mes extra sin costo." />
-  <meta property="og:image" content="/social-share.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://www.attentiastudio.com.ar/social-share.jpg" />
+  <meta name="twitter:image" content="https://www.attentiastudio.com.ar/social-share.jpg" />
+
 
   <link rel="canonical" href="https://www.attentiastudio.com.ar/" />
   <link rel="icon" href="/favicon.ico" />
@@ -231,7 +232,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header>
     <div class="container nav">
       <div class="brand">
-       <img src="logo-attentia.svg" alt="Logo Attentia" />
+       <img src="logo-attentia.svg" alt="Logo Attentia" width="160" height="40" />
        <span class="wordmark visually-hidden">ATTENTIA Studio</span>
       </div>
       <nav aria-label="Principal">
@@ -432,8 +433,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })();
   </script>
 
-<!-- ProfessionalService JSON-LD -->
-<!-- ProfessionalService + Local signals (JSON-LD) -->
+<!-- ProfessionalService + señales locales -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -472,9 +472,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       "closes": "18:00"
     }
   ],
-  "sameAs": [
-    "https://www.linkedin.com/in/juanjocuccia/"
-  ],
+  "sameAs": ["https://www.linkedin.com/in/juanjocuccia/"],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+54 9 261 7088013",
+    "contactType": "customer support",
+    "areaServed": "AR",
+    "availableLanguage": ["es","en"]
+  }],
   "serviceType": "Optimización web comercial, SEO, AEO",
   "knowsAbout": [
     "Optimización de conversión (CRO)",
