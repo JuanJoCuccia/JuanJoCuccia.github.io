@@ -433,21 +433,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
 <!-- ProfessionalService JSON-LD -->
+<!-- ProfessionalService + Local signals (JSON-LD) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://www.attentiastudio.com.ar/#attentia",
   "name": "ATTENTIA Studio",
   "url": "https://www.attentiastudio.com.ar/",
   "logo": "https://www.attentiastudio.com.ar/logo-attentia.svg",
   "image": "https://www.attentiastudio.com.ar/social-share.jpg",
+  "slogan": "Tu web puede vender. Yo te muestro cómo.",
+  "description": "Diagnóstico y optimización para sitios comerciales. Mejoras rápidas y de fondo en contenido, experiencia móvil, velocidad y visibilidad en Google y en respuestas de IA.",
+  "email": "info@attentiastudio.com.ar",
+  "telephone": "+54 9 261 7088013",
   "priceRange": "A convenir",
   "founder": {
     "@type": "Person",
-    "name": "JuanJo Cuccia"
+    "name": "JuanJo Cuccia",
+    "url": "https://www.linkedin.com/in/juanjocuccia/"
   },
-  "email": "info@attentiastudio.com.ar",
-  "telephone": "+54 9 261 7088013",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Ser Puente - CoWorking. Libertad 1256",
@@ -455,11 +460,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     "addressLocality": "Guaymallén, Mendoza",
     "addressCountry": "AR"
   },
+  "areaServed": [
+    { "@type": "Country", "name": "AR" },
+    "Hispanoamérica"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
   "sameAs": [
     "https://www.linkedin.com/in/juanjocuccia/"
   ],
   "serviceType": "Optimización web comercial, SEO, AEO",
-  "areaServed": "Hispanoamérica",
+  "knowsAbout": [
+    "Optimización de conversión (CRO)",
+    "UX en móvil",
+    "Rendimiento web (Core Web Vitals)",
+    "SEO técnico",
+    "SEO de contenidos",
+    "AEO (Answer Engine Optimization)",
+    "Datos estructurados (Schema.org)",
+    "Google Tag Manager y Analytics 4"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Servicios de Optimización Web",
@@ -468,16 +494,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Auditoría de sitio web",
-          "description": "Análisis de fricciones, velocidad, UX y visibilidad en buscadores."
+          "name": "Diagnóstico express 48 h",
+          "description": "Revisión integral de sitio comercial: fricciones, claridad del mensaje, mobile UX, velocidad y visibilidad. Entrega con 10 acciones priorizadas."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Optimización SEO y AEO",
-          "description": "Ajuste de contenidos, estructura y datos para buscadores y asistentes de IA."
+          "name": "Optimización SEO + AEO",
+          "description": "Ajustes técnicos, contenido y datos estructurados para buscadores y asistentes de IA."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Implementación y medición",
+          "description": "Ejecución de mejoras, GTM/GA4, tableros simples y seguimiento de señales tempranas."
         }
       }
     ]
