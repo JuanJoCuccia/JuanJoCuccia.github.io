@@ -566,6 +566,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 })();
 </script>
+<script>
+/*  FAQ → empuja a dataLayer cada vez que se abre/cierra una pregunta  */
+(function () {
+  const blocks = document.querySelectorAll('#faq details');
+  if (!blocks.length) return;
 
+  window.dataLayer = window.dataLayer || [];
+
+  blocks.forEach((d) => {
+    const s = d.querySelector('summary');
+    if (!s) return;
+
+    s.addEventListener('click', function () {
+      // El click dispara antes de que cambie el estado, por eso invertimos:
+      const willOpen = !d.open;
+      window.dataLayer.push({
+        event: 'faq_click',
+        question: (this.textContent || '').trim(),
+        faq_state: willOpen ? 'open' : 'close',
+        page_location: location.href
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
