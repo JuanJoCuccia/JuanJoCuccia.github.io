@@ -22,7 +22,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:image" content="https://www.attentiastudio.com.ar/social-share.jpg" />
   <meta name="twitter:image" content="https://www.attentiastudio.com.ar/social-share.jpg" />
 
-
   <link rel="canonical" href="https://www.attentiastudio.com.ar/" />
   <link rel="icon" href="/favicon.ico" />
   <style>
@@ -95,12 +94,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center}
     .eyebrow{display:inline-block; background:rgba(94,178,156,.15); color:#226653; padding:6px 10px; border-radius:999px; font-weight:600; font-size:12px; letter-spacing:.4px}
     h1{font-size:clamp(28px, 5vw, 44px); margin:14px 0 10px}
-    .sub{font-size:clamp(16px, 2.4vw, 20px); color:#333; margin:0 0 22px}
+    .sub{font-size:clamp(16px, 2.4vw, 20px); color:#333; margin:0}
     .promise{display:flex; align-items:flex-start; gap:10px; background:var(--card); border:1px solid var(--border); padding:12px 14px; border-radius:14px; font-size:14px; color:#2c2c2c}
     .promise strong{color:var(--violet-2)}
     .hero-card{background:linear-gradient(180deg, #fff, #f7f8ff); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px}
     .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
     .badge{font-size:12px; padding:8px 12px; border-radius:999px; border:1px solid var(--border); background:#fff}
+
+    /* NUEVO: fila con avatar + texto */
+    .intro{display:flex; align-items:center; gap:14px; margin:0 0 22px}
+    .avatar img{width:72px; height:72px; border-radius:50%; object-fit:cover; box-shadow:0 2px 10px rgba(0,0,0,.08)}
+    @media (max-width:600px){
+      .avatar img{width:64px; height:64px}
+    }
 
     /* Sections */
     section{padding:60px 0}
@@ -126,11 +132,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .foot-legal{border-top:1px solid rgba(255,255,255,.08); margin-top:20px; padding-top:16px; font-size:12px; color:#b9c3d1}
 
     /* Sticky mobile CTA */
-.sticky-cta{
-  position:fixed; bottom:calc(12px + env(safe-area-inset-bottom)); left:50%; transform:translateX(-50%);
-  display:flex; gap:10px; padding:10px; background:#fff; border:1px solid var(--border);
-  border-radius:999px; box-shadow:var(--shadow); z-index:60;
-  backdrop-filter:saturate(150%) blur(8px);
+    .sticky-cta{
+      position:fixed; bottom:calc(12px + env(safe-area-inset-bottom)); left:50%; transform:translateX(-50%);
+      display:flex; gap:10px; padding:10px; background:#fff; border:1px solid var(--border);
+      border-radius:999px; box-shadow:var(--shadow); z-index:60;
+      backdrop-filter:saturate(150%) blur(8px);
     }
 
     /* Responsive */
@@ -141,23 +147,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .foot-grid{grid-template-columns:1fr}
       nav ul{display:none}
       /* Evitar solapamiento del logo/título en mobile */
-      header .cta{ display:none; }           /* oculto CTA del header en mobile */
-      .btn{ padding:10px 14px; }             /* leve ajuste de botones en mobile */
+      header .cta{ display:none; }
+      .btn{ padding:10px 14px; }
       /* Reservo espacio para la barra flotante en mobile */
       body{ padding-bottom:96px; }
     }
     .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
+
   <!-- FAQPage JSON-LD (match exacto con el FAQ visible) -->
 <script type="application/ld+json">
 {
@@ -257,7 +264,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div>
           <span class="eyebrow">Optimización web sin vueltas</span>
           <h1 id="headline">Tu web puede vender. Yo te muestro cómo.</h1>
-          <p class="sub">Si tu sitio recibe visitas pero no compra nadie, no es “mala suerte”: hay fricciones, mensajes confusos o pasos rotos. Yo me meto en tu web, encuentro los cuellos de botella y te dejo un plan simple para que vuelvas a vender.</p>
+
+          <!-- NUEVO: avatar + párrafo -->
+          <div class="intro">
+            <picture class="avatar">
+              <source srcset="/JuanJo-600.webp" type="image/webp" media="(min-width: 1024px)">
+              <source srcset="/JuanJo-400.webp" type="image/webp" media="(min-width: 480px)">
+              <img src="/JuanJo-200.webp" alt="JuanJo Cuccia" width="100" height="100" loading="lazy" decoding="async">
+            </picture>
+            <p class="sub">
+              Si tu sitio recibe visitas pero no compra nadie, no es “mala suerte”: hay fricciones, mensajes confusos o pasos rotos.
+              Yo me meto en tu web, encuentro los cuellos de botella y te dejo un plan simple para que vuelvas a vender.
+            </p>
+          </div>
+
           <div class="promise" role="note" aria-label="Promesa operacional">
             <span>✅</span>
             <span><strong>Promesa:</strong> Si en 30 días no ves <em>señales tempranas</em> en los objetivos definidos, te acompaño <strong>1 mes extra sin costo</strong>.</span>
@@ -272,6 +292,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a class="btn btn-ghost" href="https://www.linkedin.com/in/juanjocuccia/" target="_blank" rel="noopener" aria-label="LinkedIn de JuanJo">LinkedIn</a>
           </div>
         </div>
+
         <div class="hero-card" aria-label="Cómo te ayudo, en resumen">
           <div class="cards" style="grid-template-columns:1fr; gap:12px">
             <div class="card">
