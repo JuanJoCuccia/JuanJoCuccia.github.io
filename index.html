@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
-  <!- Google Tag Manager ->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NC3M5DVX');</script>
-<!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NC3M5DVX');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Activo evento inicial para GA4 basado en evento (evitá duplicar si tu GA4 Config ya envía page_view) -->
+  <script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({event:'page_view'});</script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ATTENTIA Studio — Tu web puede vender. Yo te muestro cómo.</title>
@@ -157,90 +163,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border: 0;
     }
     .intro-with-photo {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 20px 0;
-}
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 20px 0;
+    }
 
-.intro-with-photo .avatar {
-  border-radius: 50%;       /* lo deja circular */
-  flex-shrink: 0;           /* evita que se achique */
-  box-shadow: 0 4px 10px rgba(0,0,0,.1);
-}
+    .intro-with-photo .avatar {
+      border-radius: 50%;       /* lo deja circular */
+      flex-shrink: 0;           /* evita que se achique */
+      box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    }
   </style>
 
   <!-- FAQPage JSON-LD (match exacto con el FAQ visible) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cuánto tarda y cómo empezamos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "En 48 h te entrego un diagnóstico inicial y las 10 acciones priorizadas para 30 días. Empezamos con una llamada corta y acceso a tu sitio."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Necesito cambiar de plataforma o rehacer mi web?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No necesariamente. Primero optimizo lo que tenés. Sólo si la base no soporta mejoras, te propongo alternativas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Trabajás con mi equipo o agencia actual?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí. Me integro y coordino para que todo avance. Menos vueltas, más resultados."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué entregables recibo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Diagnóstico claro, plan de acción de 30 días, checklist para tu web, tablero simple de métricas y una grabación breve explicando todo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué pasa si no veo mejoras?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Activa mi promesa: si en 30 días no aparecen señales tempranas en lo que definimos, te acompaño 1 mes extra sin costo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Podés ayudar con anuncios o redes?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, pero después de ordenar la casa. Primero que la web convierta; luego aceleramos con pauta."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo coordinamos?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Escribime por WhatsApp o por email. Agendamos una videollamada de 20 minutos."
-      }
-    }
-  ]
-}
-</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Cuánto tarda y cómo empezamos?", "acceptedAnswer": { "@type": "Answer", "text": "En 48 h te entrego un diagnóstico inicial y las 10 acciones priorizadas para 30 días. Empezamos con una llamada corta y acceso a tu sitio." } },
+      { "@type": "Question", "name": "¿Necesito cambiar de plataforma o rehacer mi web?", "acceptedAnswer": { "@type": "Answer", "text": "No necesariamente. Primero optimizo lo que tenés. Sólo si la base no soporta mejoras, te propongo alternativas." } },
+      { "@type": "Question", "name": "¿Trabajás con mi equipo o agencia actual?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Me integro y coordino para que todo avance. Menos vueltas, más resultados." } },
+      { "@type": "Question", "name": "¿Qué entregables recibo?", "acceptedAnswer": { "@type": "Answer", "text": "Diagnóstico claro, plan de acción de 30 días, checklist para tu web, tablero simple de métricas y una grabación breve explicando todo." } },
+      { "@type": "Question", "name": "¿Qué pasa si no veo mejoras?", "acceptedAnswer": { "@type": "Answer", "text": "Activa mi promesa: si en 30 días no aparecen señales tempranas en lo que definimos, te acompaño 1 mes extra sin costo." } },
+      { "@type": "Question", "name": "¿Podés ayudar con anuncios o redes?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, pero después de ordenar la casa. Primero que la web convierta; luego aceleramos con pauta." } },
+      { "@type": "Question", "name": "¿Cómo coordinamos?", "acceptedAnswer": { "@type": "Answer", "text": "Escribime por WhatsApp o por email. Agendamos una videollamada de 20 minutos." } }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC3M5DVX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC3M5DVX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>
     <div class="container nav">
       <div class="brand">
@@ -257,14 +214,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </nav>
       <div class="cta">
-  <a class="btn btn-ghost" href="mailto:info@attentiastudio.com.ar">Escribime</a>
-  <a class="btn btn-primary" 
-     href="https://wa.me/5492617088013?text=Hola,%20soy%20JuanJo%20Cuccia%20y%20te%20ayudo%20a%20que%20tu%20web%20venda%20más." 
-     target="_blank" 
-     rel="noopener">
-     Hablemos por WhatsApp
-  </a>
-</div>
+        <a class="btn btn-ghost" href="mailto:info@attentiastudio.com.ar">Escribime</a>
+        <a class="btn btn-primary" 
+           href="https://wa.me/5492617088013?text=Hola,%20soy%20JuanJo%20Cuccia%20y%20te%20ayudo%20a%20que%20tu%20web%20venda%20más." 
+           target="_blank" 
+           rel="noopener">
+           Hablemos por WhatsApp
+        </a>
+      </div>
     </div>
   </header>
 
@@ -276,13 +233,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h1 id="headline">Tu web puede vender. Yo te muestro cómo.</h1>
 
           <!-- NUEVO: avatar + párrafo -->
-        <div class="intro-with-photo">
-          <img src="JuanJo-400.webp" alt="JuanJo Cuccia" class="avatar" width="120" height="120" />
-          <p class="sub">
-            ¿Tu sitio web tiene visitas pero no está convirtiendo? Tranquilo, es una frustración común, y la buena noticia es que no es por mala suerte, sino por detalles que se pueden arreglar.  
-            Mi trabajo es simple: me meto en tu web, como si fuera un cliente, para encontrar esas fricciones y mensajes confusos. Después, te doy un plan de acción claro y simple para que empieces a ver resultados concretos y tu web se convierta en una herramienta real de ventas.
-          </p>
-        </div>
+          <div class="intro-with-photo">
+            <img src="JuanJo-400.webp" alt="JuanJo Cuccia" class="avatar" width="120" height="120" />
+            <p class="sub">
+              ¿Tu sitio web tiene visitas pero no está convirtiendo? Tranquilo, es una frustración común, y la buena noticia es que no es por mala suerte, sino por detalles que se pueden arreglar.  
+              Mi trabajo es simple: me meto en tu web, como si fuera un cliente, para encontrar esas fricciones y mensajes confusos. Después, te doy un plan de acción claro y simple para que empieces a ver resultados concretos y tu web se convierta en una herramienta real de ventas.
+            </p>
+          </div>
 
           <div class="promise" role="note" aria-label="Promesa operacional">
             <span>✅</span>
@@ -460,136 +417,112 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })();
   </script>
 
-<!-- ProfessionalService + señales locales -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://www.attentiastudio.com.ar/#attentia",
-  "name": "ATTENTIA Studio",
-  "url": "https://www.attentiastudio.com.ar/",
-  "logo": "https://www.attentiastudio.com.ar/logo-attentia.svg",
-  "image": "https://www.attentiastudio.com.ar/social-share.jpg",
-  "slogan": "Tu web puede vender. Yo te muestro cómo.",
-  "description": "Diagnóstico y optimización para sitios comerciales. Mejoras rápidas y de fondo en contenido, experiencia móvil, velocidad y visibilidad en Google y en respuestas de IA.",
-  "email": "info@attentiastudio.com.ar",
-  "telephone": "+54 9 261 7088013",
-  "priceRange": "A convenir",
-  "founder": {
-    "@type": "Person",
-    "name": "JuanJo Cuccia",
-    "url": "https://www.linkedin.com/in/juanjocuccia/",
-    "image": "https://www.attentiastudio.com.ar/JuanJo-400.webp"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Ser Puente - CoWorking. Libertad 1256",
-    "postalCode": "M5521",
-    "addressLocality": "Guaymallén, Mendoza",
-    "addressCountry": "AR"
-  },
-  "areaServed": [
-    { "@type": "Country", "name": "AR" },
-    "Hispanoamérica"
-  ],
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    }
-  ],
-  "sameAs": ["https://www.linkedin.com/in/juanjocuccia/"],
-  "contactPoint": [{
-    "@type": "ContactPoint",
+  <!-- ProfessionalService + señales locales -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://www.attentiastudio.com.ar/#attentia",
+    "name": "ATTENTIA Studio",
+    "url": "https://www.attentiastudio.com.ar/",
+    "logo": "https://www.attentiastudio.com.ar/logo-attentia.svg",
+    "image": "https://www.attentiastudio.com.ar/social-share.jpg",
+    "slogan": "Tu web puede vender. Yo te muestro cómo.",
+    "description": "Diagnóstico y optimización para sitios comerciales. Mejoras rápidas y de fondo en contenido, experiencia móvil, velocidad y visibilidad en Google y en respuestas de IA.",
+    "email": "info@attentiastudio.com.ar",
     "telephone": "+54 9 261 7088013",
-    "contactType": "customer support",
-    "areaServed": "AR",
-    "availableLanguage": ["es","en"]
-  }],
-  "serviceType": "Optimización web comercial, SEO, AEO",
-  "knowsAbout": [
-    "Optimización de conversión (CRO)",
-    "UX en móvil",
-    "Rendimiento web (Core Web Vitals)",
-    "SEO técnico",
-    "SEO de contenidos",
-    "AEO (Answer Engine Optimization)",
-    "Datos estructurados (Schema.org)",
-    "Google Tag Manager y Analytics 4"
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Servicios de Optimización Web",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Diagnóstico express 48 h",
-          "description": "Revisión integral de sitio comercial: fricciones, claridad del mensaje, mobile UX, velocidad y visibilidad. Entrega con 10 acciones priorizadas."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Optimización SEO + AEO",
-          "description": "Ajustes técnicos, contenido y datos estructurados para buscadores y asistentes de IA."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Implementación y medición",
-          "description": "Ejecución de mejoras, GTM/GA4, tableros simples y seguimiento de señales tempranas."
-        }
-      }
-    ]
+    "priceRange": "A convenir",
+    "founder": {
+      "@type": "Person",
+      "name": "JuanJo Cuccia",
+      "url": "https://www.linkedin.com/in/juanjocuccia/",
+      "image": "https://www.attentiastudio.com.ar/JuanJo-400.webp"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ser Puente - CoWorking. Libertad 1256",
+      "postalCode": "M5521",
+      "addressLocality": "Guaymallén, Mendoza",
+      "addressCountry": "AR"
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "AR" },
+      "Hispanoamérica"
+    ],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
+    ],
+    "sameAs": ["https://www.linkedin.com/in/juanjocuccia/"],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+54 9 261 7088013",
+      "contactType": "customer support",
+      "areaServed": "AR",
+      "availableLanguage": ["es","en"]
+    }],
+    "serviceType": "Optimización web comercial, SEO, AEO",
+    "knowsAbout": [
+      "Optimización de conversión (CRO)",
+      "UX en móvil",
+      "Rendimiento web (Core Web Vitals)",
+      "SEO técnico",
+      "SEO de contenidos",
+      "AEO (Answer Engine Optimization)",
+      "Datos estructurados (Schema.org)",
+      "Google Tag Manager y Analytics 4"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de Optimización Web",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico express 48 h", "description": "Revisión integral de sitio comercial: fricciones, claridad del mensaje, mobile UX, velocidad y visibilidad. Entrega con 10 acciones priorizadas." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Optimización SEO + AEO", "description": "Ajustes técnicos, contenido y datos estructurados para buscadores y asistentes de IA." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Implementación y medición", "description": "Ejecución de mejoras, GTM/GA4, tableros simples y seguimiento de señales tempranas." } }
+      ]
+    }
   }
-}
-</script>
-<script>
-(function(){
-  const botones = document.querySelectorAll('a.js-wa-dx');
-  if(!botones.length) return;
-  botones.forEach(btn=>{
-    btn.addEventListener('click', function(e){
-      e.preventDefault();
-      const base = 'https://wa.me/5492617088013';
-      const msg = `Hola JuanJo, quiero mi diagnóstico para mi web. Vengo desde la landing de Attentia. URL: ${location.href}`;
-      const url = `${base}?text=${encodeURIComponent(msg)}`;
-      window.open(url, '_blank', 'noopener');
-    });
-  });
-})();
-</script>
-<script>
-/*  FAQ → empuja a dataLayer cada vez que se abre/cierra una pregunta  */
-(function () {
-  const blocks = document.querySelectorAll('#faq details');
-  if (!blocks.length) return;
+  </script>
 
-  window.dataLayer = window.dataLayer || [];
-
-  blocks.forEach((d) => {
-    const s = d.querySelector('summary');
-    if (!s) return;
-
-    s.addEventListener('click', function () {
-      // El click dispara antes de que cambie el estado, por eso invertimos:
-      const willOpen = !d.open;
-      window.dataLayer.push({
-        event: 'faq_click',
-        question: (this.textContent || '').trim(),
-        faq_state: willOpen ? 'open' : 'close',
-        page_location: location.href
+  <script>
+  (function(){
+    const botones = document.querySelectorAll('a.js-wa-dx');
+    if(!botones.length) return;
+    botones.forEach(btn=>{
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        const base = 'https://wa.me/5492617088013';
+        const msg = `Hola JuanJo, quiero mi diagnóstico para mi web. Vengo desde la landing de Attentia. URL: ${location.href}`;
+        const url = `${base}?text=${encodeURIComponent(msg)}`;
+        window.open(url, '_blank', 'noopener');
       });
     });
-  });
-})();
-</script>
+  })();
+  </script>
+
+  <script>
+  /*  FAQ → empuja a dataLayer cada vez que se abre/cierra una pregunta  */
+  (function () {
+    const blocks = document.querySelectorAll('#faq details');
+    if (!blocks.length) return;
+
+    window.dataLayer = window.dataLayer || [];
+
+    blocks.forEach((d) => {
+      const s = d.querySelector('summary');
+      if (!s) return;
+
+      s.addEventListener('click', function () {
+        // El click dispara antes de que cambie el estado, por eso invertimos:
+        const willOpen = !d.open;
+        window.dataLayer.push({
+          event: 'faq_click',
+          question: (this.textContent || '').trim(),
+          faq_state: willOpen ? 'open' : 'close',
+          page_location: location.href
+        });
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
